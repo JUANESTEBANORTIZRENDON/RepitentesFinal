@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<h2>Iniciar Sesión</h2>
+
+<form asp-action="Login" method="post">
+    <div>
+        <label>Correo:</label>
+        <input type="email" name="correo" required />
+    </div>
+
+    <div>
+        <label>Contraseña:</label>
+        <input type="password" name="clave" required />
+    </div>
+
+    <button type="submit">Entrar</button>
+</form>
+
+<p style="color:red">@ViewBag.Mensaje</p>
+
+<hr />
+
+<div>
+    <p>¿No tienes cuenta? <a asp-controller="Cuenta" asp-action="Registro">Regístrate aquí</a></p>
+    <p>¿Olvidaste tu contraseña? <a asp-controller="Cuenta" asp-action="CambiarClave">Recupérala aquí</a></p>
+</div>

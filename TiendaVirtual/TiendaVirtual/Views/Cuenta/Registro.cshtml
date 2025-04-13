@@ -1,0 +1,19 @@
+﻿@model TiendaVirtual.Models.Usuario
+
+<h2>Registro de Cliente</h2>
+
+<form asp-action="Registro" method="post">
+    <label>Nombre:</label>
+    <input asp-for="Nombre" />
+    <span asp-validation-for="Nombre" style="color:red"></span>
+
+    <label>Correo:</label>
+    <input asp-for="Correo" type="email" />
+    <span asp-validation-for="Correo" style="color:red"></span>
+
+    <label>Contraseña:</label>
+    <input asp-for="Clave" type="password" />
+    <span asp-validation-for="Clave" style="color:red"></span>
+
+    <button type="submit">Registrarse</button>
+</form>

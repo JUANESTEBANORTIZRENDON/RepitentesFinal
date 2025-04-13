@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Cambiar Contraseña";
+}
+
+<h2>Restablecer Contraseña</h2>
+
+<form asp-action="CambiarClave" method="post">
+    <label>Correo registrado:</label>
+    <input type="email" name="correo" required />
+
+    <label>Nueva contraseña:</label>
+    <input type="password" name="nuevaClave" required />
+
+    <button type="submit">Actualizar</button>
+</form>
+
+<p style="color:green">@ViewBag.Mensaje</p>

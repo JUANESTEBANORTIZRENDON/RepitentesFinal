@@ -129,7 +129,6 @@ D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\stati
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.TiendaVirtual.props
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TiendaVirtual.props
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets.pack.json
-D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\TiendaVi.47C15EA4.Up2Date
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\TiendaVirtual.dll
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\refint\TiendaVirtual.dll
@@ -264,3 +263,4 @@ D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\bin\Debug\net8.0\runti
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\TiendaVirtual.sourcelink.json
+D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

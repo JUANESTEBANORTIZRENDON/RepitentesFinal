@@ -56,6 +56,7 @@ namespace TiendaVirtual.Controllers
         [HttpPost]
         public async Task<IActionResult> Registro(Usuario usuario)
         {
+            //valida si correo a crear ya existe 
             if (_db.ExisteCorreo(usuario.Correo))
             {
                 ModelState.AddModelError("Correo", "Este correo ya está registrado.");

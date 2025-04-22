@@ -1,0 +1,43 @@
+﻿@model List<TiendaVirtual.Models.Producto>
+
+@{
+    ViewData["Title"] = "Catálogo de Productos";
+}
+
+<h2>Catálogo de Productos</h2>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["mensaje"]</div>
+}
+
+<a href="/Catalogo/Crear" class="btn btn-success mb-3">+ Añadir Producto</a>
+
+<!-- Contenedor de los productos -->
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card">
+                <!-- Imagen del producto -->
+                <img src="@item.Imagen" class="card-img-top" alt="Imagen" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <!-- Nombre del producto -->
+                    <h5 class="card-title">@item.Nombre</h5>
+
+                    <!-- Atributos del producto -->
+                    <p><strong>Código:</strong> @item.CodigoProducto</p>
+                    <p><strong>Marca:</strong> @item.Marca</p>
+                    <p><strong>Precio:</strong> $@item.PrecioUnitario</p>
+                    <p><strong>Stock:</strong> @item.Stock</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+
+
+
+

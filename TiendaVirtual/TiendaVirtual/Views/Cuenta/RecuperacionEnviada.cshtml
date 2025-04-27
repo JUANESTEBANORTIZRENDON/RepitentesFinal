@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Correo de Recuperación Enviado";
+}
+
+<div class="container text-center mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 500px; border-radius: 15px;">
+        <h2 class="text-success mb-4">¡Correo enviado!</h2>
+        <p>Hemos enviado un correo electrónico a la dirección que proporcionaste.</p>
+        <p>Revisa tu bandeja de entrada (y la carpeta de spam) para continuar con el proceso de restablecimiento de contraseña.</p>
+
+        <a href="@Url.Action("Login", "Cuenta")" class="btn btn-success mt-3">Ir al inicio de sesión</a>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right, #a8edea, #fed6e3);
+        font-family: 'Arial', sans-serif;
+    }
+
+    .card h2 {
+        color: #4CAF50;
+    }
+
+    .btn-success {
+        background-color: #4CAF50;
+        border: none;
+        padding: 10px 25px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background-color: #45a049;
+        }
+</style>

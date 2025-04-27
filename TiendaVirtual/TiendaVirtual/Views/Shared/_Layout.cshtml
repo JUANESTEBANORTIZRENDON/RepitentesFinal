@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TiendaVirtual.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512..." crossorigin="anonymous" />
 </head>
 <body>
     <header>
@@ -32,7 +33,7 @@
                         </li>
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
-                          
+
 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Cuenta" asp-action="Logout">Cerrar sesión</a>
@@ -56,10 +57,17 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="custom-footer text-center text-muted mt-5">
         <div class="container">
-            &copy; 2025 - TiendaVirtual - <a asp-area="" asp-controller="Home" asp-action="Privacy">Acerca de nosotros</a>
+            &copy; 2025 - TiendaVirtual · <a asp-controller="Home" asp-action="Privacy">Acerca de nosotros</a>
         </div>
+        <div class="social-icons mt-2">
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

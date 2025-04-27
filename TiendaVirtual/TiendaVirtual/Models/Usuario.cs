@@ -21,6 +21,14 @@ public partial class Usuario
 
     public int? IdRol { get; set; }
 
+    public bool Confirmado { get; set; }
+
+    public string? TokenConfirmacion { get; set; }
+
+    public string? TokenRecuperacion { get; set; }
+
+    public DateTime? ExpiracionTokenRecuperacion { get; set; }
+
     public virtual ICollection<Carrito> Carritos { get; set; } = new List<Carrito>();
 
     public virtual ICollection<Factura> Facturas { get; set; } = new List<Factura>();

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Recuperar Contraseña";
+}
+
+<h2>Recuperar Contraseña</h2>
+
+<form asp-action="Recuperar" method="post">
+    <div class="mb-3">
+        <label>Correo electrónico:</label>
+        <input type="email" name="correo" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Enlace de Recuperación</button>
+</form>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-info mt-3">@TempData["mensaje"]</div>
+}

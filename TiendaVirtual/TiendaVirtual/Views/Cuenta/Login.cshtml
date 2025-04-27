@@ -2,27 +2,49 @@
     ViewData["Title"] = "Iniciar Sesión";
 }
 
-<h2>Iniciar Sesión</h2>
+<div class="auth-background"></div>
 
-<form asp-action="Login" method="post">
-    <div>
+<div class="login-container">
+    <img id="bearImage" src="/images/oso-login.png" alt="Oso" class="bear-img" onerror="this.style.display='none';" />
+
+
+    <h2>Iniciar Sesión</h2>
+
+    <form asp-action="Login" method="post">
         <label>Correo:</label>
         <input type="email" name="correo" required />
-    </div>
 
-    <div>
         <label>Contraseña:</label>
-        <input type="password" name="clave" required />
+        <input type="password" name="clave" required id="passwordInput" />
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    @if (ViewBag.Mensaje != null)
+{
+    <div class="alert alert-danger text-center mt-3">
+        @ViewBag.Mensaje
     </div>
+}
 
-    <button type="submit">Entrar</button>
-</form>
 
-<p style="color:red">@ViewBag.Mensaje</p>
-
-<hr />
-
-<div>
-    <p>¿No tienes cuenta? <a asp-controller="Cuenta" asp-action="Registro">Regístrate aquí</a></p>
-    <p>¿Olvidaste tu contraseña? <a asp-controller="Cuenta" asp-action="CambiarClave">Recupérala aquí</a></p>
+    <div class="login-links">
+        <p>¿No tienes cuenta? <a asp-controller="Cuenta" asp-action="Registrar">Regístrate aquí</a></p>
+        <p>¿Olvidaste tu contraseña? <a asp-controller="Cuenta" asp-action="Recuperar">Recupérala aquí</a></p>
+    </div>
 </div>
+
+@section Scripts {
+    <script>
+        const passwordInput = document.getElementById('passwordInput');
+        const bearImage = document.getElementById('bearImage');
+
+        passwordInput.addEventListener('focus', () => {
+            bearImage.classList.add('cover-eyes');
+        });
+
+        passwordInput.addEventListener('blur', () => {
+            bearImage.classList.remove('cover-eyes');
+        });
+    </script>
+}

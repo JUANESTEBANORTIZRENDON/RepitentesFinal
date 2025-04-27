@@ -69,5 +69,65 @@ namespace TiendaVirtual.Data
 
             return resultado;
         }
+
+        public static List<Producto> ObtenerProductosFiltrados(string busqueda, int pagina, int tamanoPagina, out int total)
+        {
+            List<Producto> lista = new List<Producto>();
+            total = 0;
+
+            using (var conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+
+                // Conteo total para paginación
+                string countQuery = @"SELECT COUNT(*) FROM producto 
+                              WHERE (@busqueda IS NULL OR 
+                                     nombre ILIKE '%' || @busqueda || '%' OR 
+                                     marca ILIKE '%' || @busqueda || '%' OR 
+                                     codigo_producto ILIKE '%' || @busqueda || '%')";
+
+                using (var countCmd = new NpgsqlCommand(countQuery, conn))
+                {
+                    countCmd.Parameters.AddWithValue("busqueda", (object)busqueda ?? DBNull.Value);
+                    total = Convert.ToInt32(countCmd.ExecuteScalar());
+                }
+
+                // Consulta paginada
+                string query = @"SELECT * FROM producto 
+                         WHERE (@busqueda IS NULL OR 
+                                nombre ILIKE '%' || @busqueda || '%' OR 
+                                marca ILIKE '%' || @busqueda || '%' OR 
+                                codigo_producto ILIKE '%' || @busqueda || '%')
+                         ORDER BY id_producto
+                         OFFSET @offset LIMIT @limit";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("busqueda", (object)busqueda ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("offset", (pagina - 1) * tamanoPagina);
+                    cmd.Parameters.AddWithValue("limit", tamanoPagina);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Producto
+                            {
+                                IdProducto = (int)reader["id_producto"],
+                                Nombre = reader["nombre"].ToString(),
+                                CodigoProducto = reader["codigo_producto"].ToString(),
+                                Marca = reader["marca"].ToString(),
+                                PrecioUnitario = (decimal)reader["precio_unitario"],
+                                Stock = (int)reader["stock"],
+                                Imagen = reader["imagen"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
+
     }
 }

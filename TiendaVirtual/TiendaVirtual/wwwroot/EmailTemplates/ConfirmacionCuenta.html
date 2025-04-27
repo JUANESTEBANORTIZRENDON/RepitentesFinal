@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Cuenta</title>
+    <style>
+        body {{
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #a8edea, #fed6e3);
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }}
+
+        .card {{
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }}
+
+        .button {{
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }}
+
+        .button:hover {{
+            background-color: #45a049;
+        }}
+
+        h2 {{
+            color: #4CAF50;
+        }}
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Hola {0},</h2>
+        <p>Gracias por registrarte en Tienda Virtual. Por favor, confirma tu cuenta haciendo clic en el siguiente enlace:</p>
+        <a class="button" href="{1}">Confirmar Cuenta</a>
+        <p style="margin-top:20px; color: #888;">Si no realizaste este registro, puedes ignorar este correo.</p>
+    </div>
+</body>
+</html>
+

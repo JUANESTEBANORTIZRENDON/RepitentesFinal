@@ -4,40 +4,112 @@
     ViewData["Title"] = "Catálogo de Productos";
 }
 
-<h2>Catálogo de Productos</h2>
+<div class="text-center mb-5">
+    <h2 class="display-5 fw-bold text-primary">Nuestro Catálogo</h2>
+    <p class="lead">Explora nuestra selección de productos destacados para ti.</p>
+</div>
 
 @if (TempData["mensaje"] != null)
 {
     <div class="alert alert-success">@TempData["mensaje"]</div>
 }
 
-<a href="/Catalogo/Crear" class="btn btn-success mb-3">+ Añadir Producto</a>
+<a href="/Catalogo/Crear" class="btn btn-primary mb-4 fw-bold">
+    <i class="bi bi-plus-circle"></i> Añadir Producto
+</a>
+
+<form method="get" class="row g-2 mb-4">
+    <div class="col-md-4">
+        <input type="text" name="busqueda" class="form-control" placeholder="Buscar producto..." value="@ViewBag.Busqueda" />
+    </div>
+    <div class="col-md-4">
+        <select name="orden" class="form-select">
+            <option value="">Ordenar por</option>
+            <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
+            <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
+            <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
+            <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary w-100">Aplicar</button>
+    </div>
+</form>
+
 
 <!-- Contenedor de los productos -->
-<div class="row">
+<div class="row justify-content-center">
     @foreach (var item in Model)
     {
-        <div class="col-md-3 mb-4">
-            <div class="card">
-                <!-- Imagen del producto -->
-                <img src="@item.Imagen" class="card-img-top" alt="Imagen" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <!-- Nombre del producto -->
-                    <h5 class="card-title">@item.Nombre</h5>
-
-                    <!-- Atributos del producto -->
-                    <p><strong>Código:</strong> @item.CodigoProducto</p>
-                    <p><strong>Marca:</strong> @item.Marca</p>
-                    <p><strong>Precio:</strong> $@item.PrecioUnitario</p>
-                    <p><strong>Stock:</strong> @item.Stock</p>
-                </div>
-            </div>
+        <div class="card-body">
+            <h5 class="card-title">@item.Nombre</h5>
+            <p><strong>Código:</strong> @item.CodigoProducto</p>
+            <p><strong>Marca:</strong> @item.Marca</p>
+            <p><strong>Precio:</strong> $@item.PrecioUnitario</p>
+            <p><strong>Stock:</strong> @item.Stock</p>
+            <button class="btn btn-outline-primary w-100 mt-2"
+                    data-bs-toggle="modal"
+                    data-bs-target="#productoModal"
+                    data-nombre="@item.Nombre"
+                    data-codigo="@item.CodigoProducto"
+                    data-marca="@item.Marca"
+                    data-precio="$@item.PrecioUnitario"
+                    data-stock="@item.Stock"
+                    data-imagen="@item.Imagen">
+                Ver más
+            </button>
         </div>
     }
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow">
+            <div class="modal-header bg-light">
+                <h5 class="modal-title" id="productoModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body d-flex flex-wrap align-items-center">
+                <div class="col-md-6 text-center mb-3">
+                    <img id="modalProductoImagen" src="" class="img-fluid rounded shadow-sm" alt="Producto" />
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Código:</strong> <span id="modalProductoCodigo"></span></p>
+                    <p><strong>Marca:</strong> <span id="modalProductoMarca"></span></p>
+                    <p><strong>Precio:</strong> <span id="modalProductoPrecio"></span></p>
+                    <p><strong>Stock:</strong> <span id="modalProductoStock"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+<nav aria-label="Paginación del catálogo">
+    <ul class="pagination justify-content-center">
+        @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
+        {
+            <li class="page-item @(i == ViewBag.PaginaActual ? "active" : "")">
+                <a class="page-link"
+                   href="@Url.Action("Index", new { pagina = i, busqueda = ViewBag.Busqueda, orden = ViewBag.Orden })">
+                    @i
+                </a>
+            </li>
+        }
+    </ul>
+</nav>
 
+<script>
+    const productoModal = document.getElementById('productoModal');
+    productoModal.addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
 
-
+        document.getElementById('productoModalLabel').textContent = button.getAttribute('data-nombre');
+        document.getElementById('modalProductoCodigo').textContent = button.getAttribute('data-codigo');
+        document.getElementById('modalProductoMarca').textContent = button.getAttribute('data-marca');
+        document.getElementById('modalProductoPrecio').textContent = button.getAttribute('data-precio');
+        document.getElementById('modalProductoStock').textContent = button.getAttribute('data-stock');
+        document.getElementById('modalProductoImagen').src = button.getAttribute('data-imagen');
+    });
+</script>

@@ -3,7 +3,11 @@
     var usuario = User.Identity.IsAuthenticated ? User.Identity.Name : "Invitado";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bienvenido, @usuario</h1>
-
+<div class="hero-banner">
+    <h1>Bienvenido, @usuario</h1>
+    <p class="lead mt-3">Explora productos pensados para ti. Vive una experiencia de compra moderna, rápida y atractiva.</p>
+    <a class="btn btn-lg btn-primary mt-4 px-4 py-2" asp-controller="Catalogo" asp-action="Index" style="background-color:#74ebd5; border:none;">
+        Ver catálogo
+    </a>
 </div>
+

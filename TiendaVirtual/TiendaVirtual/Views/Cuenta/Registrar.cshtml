@@ -1,0 +1,27 @@
+﻿@model TiendaVirtual.Models.Usuario
+@{
+    ViewData["Title"] = "Registro de Usuario";
+}
+
+<h2>Registro de Usuario</h2>
+
+<form asp-action="Registrar" method="post">
+    <div class="mb-3">
+        <label>Nombre:</label>
+        <input asp-for="Nombre" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label>Correo electrónico:</label>
+        <input asp-for="Correo" class="form-control" required />
+        <span asp-validation-for="Correo" class="text-danger"></span> <!-- Aquí se mostrará el error -->
+    </div>
+    <div class="mb-3">
+        <label>Contraseña:</label>
+        <input asp-for="Clave" type="password" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Registrarse</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

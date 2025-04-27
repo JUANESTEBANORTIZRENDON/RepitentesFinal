@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Cuenta Confirmada";
+}
+
+<div class="container text-center mt-5">
+    <div class="card shadow p-4" style="max-width: 500px; margin: auto;">
+        <h2 class="text-success mb-4">¡Cuenta Confirmada!</h2>
+        <p class="lead">Tu cuenta ha sido confirmada correctamente. Ya puedes iniciar sesión en la plataforma.</p>
+        <a class="btn btn-primary mt-3" asp-controller="Cuenta" asp-action="Login">
+            Ir al Login
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log("Vista de confirmación cargada correctamente.");
+    </script>
+}

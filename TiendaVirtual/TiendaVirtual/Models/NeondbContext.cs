@@ -33,7 +33,7 @@ public partial class NeondbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=ep-blue-hat-a5e7rnyz-pooler.us-east-2.aws.neon.tech;Port=5432;Database=neondb;Username=neondb_owner;Password=npg_klWR3jf6EiHv;SSL Mode=Require;Trust Server Certificate=true");
+        => optionsBuilder.UseNpgsql("Host=ep-blue-hat-a5e7rnyz-pooler.us-east-2.aws.neon.tech;Database=neondb;Username=neondb_owner;Password=npg_klWR3jf6EiHv;SSL Mode=Require");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -200,6 +200,9 @@ public partial class NeondbContext : DbContext
             entity.Property(e => e.Clave)
                 .HasMaxLength(255)
                 .HasColumnName("clave");
+            entity.Property(e => e.Confirmado)
+                .HasDefaultValue(false)
+                .HasColumnName("confirmado");
             entity.Property(e => e.Correo)
                 .HasMaxLength(100)
                 .HasColumnName("correo");
@@ -207,6 +210,7 @@ public partial class NeondbContext : DbContext
                 .HasMaxLength(150)
                 .HasColumnName("direccion");
             entity.Property(e => e.Edad).HasColumnName("edad");
+            entity.Property(e => e.ExpiracionTokenRecuperacion).HasColumnName("expiracion_token_recuperacion");
             entity.Property(e => e.IdRol).HasColumnName("id_rol");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
@@ -214,6 +218,12 @@ public partial class NeondbContext : DbContext
             entity.Property(e => e.Telefono)
                 .HasMaxLength(20)
                 .HasColumnName("telefono");
+            entity.Property(e => e.TokenConfirmacion)
+                .HasMaxLength(255)
+                .HasColumnName("token_confirmacion");
+            entity.Property(e => e.TokenRecuperacion)
+                .HasMaxLength(255)
+                .HasColumnName("token_recuperacion");
 
             entity.HasOne(d => d.IdRolNavigation).WithMany(p => p.Usuarios)
                 .HasForeignKey(d => d.IdRol)

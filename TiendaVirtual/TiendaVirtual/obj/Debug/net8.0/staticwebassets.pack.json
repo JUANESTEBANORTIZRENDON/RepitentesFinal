@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\TiendaVirtual.oe45kc7vnm.bundle.scp.css"
     },
     {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\EmailTemplates\\ConfirmacionCuenta.html",
+      "PackagePath": "staticwebassets\\EmailTemplates\\ConfirmacionCuenta.html"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\EmailTemplates\\RecuperacionPassword.html",
+      "PackagePath": "staticwebassets\\EmailTemplates\\RecuperacionPassword.html"
+    },
+    {
       "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

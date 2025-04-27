@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Registro Exitoso";
+}
+
+<div class="container text-center mt-5">
+    <div class="card shadow p-4" style="max-width: 600px; margin: auto;">
+        <h2 class="text-success mb-4">¡Cuenta creada exitosamente!</h2>
+        <p class="lead">
+            Tu cuenta ha sido registrada correctamente.<br />
+            Ahora revisa tu correo electrónico para confirmar la creación de tu cuenta.
+        </p>
+        <a class="btn btn-primary mt-4" asp-controller="Home" asp-action="Index">
+            Ir al Inicio
+        </a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log("Vista RegistroExitoso cargada correctamente.");
+    </script>
+}

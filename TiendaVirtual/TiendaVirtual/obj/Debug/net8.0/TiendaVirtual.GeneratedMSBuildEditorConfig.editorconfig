@@ -36,16 +36,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/CambiarClave.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXENhbWJpYXJDbGF2ZS5jc2h0bWw=
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Confirmar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXENvbmZpcm1hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Registro.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvLmNzaHRtbA==
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/RecuperacionEnviada.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlY3VwZXJhY2lvbkVudmlhZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Recuperar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlY3VwZXJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Registrar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/RegistroExitoso.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlZ2lzdHJvRXhpdG9zby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/Restablecer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlc3RhYmxlY2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/RestablecerConfirmacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlc3RhYmxlY2VyQ29uZmlybWFjaW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Home/Index.cshtml]

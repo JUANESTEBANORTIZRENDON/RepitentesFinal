@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Restablecer Contraseña";
+}
+
+<h2>Restablecer Contraseña</h2>
+
+<form asp-action="Restablecer" method="post">
+    <input type="hidden" name="token" value="@ViewBag.Token" />
+
+    <div class="mb-3">
+        <label>Nueva Contraseña:</label>
+        <input type="password" name="nuevaClave" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Cambiar Contraseña</button>
+</form>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-info mt-3">@TempData["mensaje"]</div>
+}

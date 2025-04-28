@@ -1,0 +1,107 @@
+﻿<
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Administración TiendaVirtual</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: -250px;
+            background-color: #343a40;
+            color: white;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+
+            .sidebar a {
+                padding: 15px 25px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #f1f1f1;
+                display: block;
+                transition: 0.2s;
+            }
+
+                .sidebar a:hover {
+                    background-color: #575d63;
+                }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #343a40;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+            .openbtn:hover {
+                background-color: #575d63;
+            }
+
+        #main {
+            transition: margin-left 0.3s;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; Cerrar</a>
+        <a asp-controller="Home" asp-action="Admin"><i class="fas fa-home"></i> Inicio Admin</a>
+        <a asp-controller="Usuarios" asp-action="Index"><i class="fas fa-users"></i> Gestionar Usuarios</a>
+        <a asp-controller="Catalogo" asp-action="AdminCatalogo"><i class="fas fa-box"></i> Gestionar Productos</a>
+        <a asp-controller="Ventas" asp-action="Index"><i class="fas fa-shopping-cart"></i> Gestionar Ventas</a>
+        <a asp-controller="Cuenta" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Menú</button>
+        <div class="container mt-4">
+            @RenderBody()
+        </div>
+    </div>
+
+    <footer class="custom-footer text-center text-muted mt-5">
+        <div class="container">
+            &copy; 2025 - TiendaVirtual · Panel de Administración · <a asp-controller="Home" asp-action="Privacy">Acerca de nosotros</a>
+        </div>
+        <div class="social-icons mt-2">
+            <a href="https://facebook.com" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.left = "0";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.left = "-250px";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

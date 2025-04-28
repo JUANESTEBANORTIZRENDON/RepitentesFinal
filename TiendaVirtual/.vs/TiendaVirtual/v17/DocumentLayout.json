@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\data\\dbproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\data\\dbproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\controllers\\catalogocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\controllers\\catalogocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\catalogo\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\catalogo\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\data\\dbproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\data\\dbproducto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\catalogo\\admincatalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\catalogo\\admincatalogo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -44,7 +48,7 @@
               "RelativeDocumentMoniker": "TiendaVirtual\\Program.cs",
               "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Program.cs",
               "RelativeToolTip": "TiendaVirtual\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAABYAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T21:50:30.258Z",
               "IsPinned": true,
@@ -52,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\appsettings.json",
               "RelativeDocumentMoniker": "TiendaVirtual\\appsettings.json",
@@ -61,21 +65,19 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAcwAsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-04-26T21:45:12.237Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DBProducto.cs",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Data\\DBProducto.cs",
-              "RelativeDocumentMoniker": "TiendaVirtual\\Data\\DBProducto.cs",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Data\\DBProducto.cs",
-              "RelativeToolTip": "TiendaVirtual\\Data\\DBProducto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:08:40.175Z",
-              "IsPinned": true,
+              "Title": "AdminCatalogo.cshtml",
+              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\AdminCatalogo.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Catalogo\\AdminCatalogo.cshtml",
+              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\AdminCatalogo.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Catalogo\\AdminCatalogo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-27T23:41:55.373Z",
               "EditorCaption": ""
             },
             {
@@ -86,36 +88,48 @@
               "RelativeDocumentMoniker": "TiendaVirtual\\Controllers\\CatalogoController.cs",
               "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Controllers\\CatalogoController.cs",
               "RelativeToolTip": "TiendaVirtual\\Controllers\\CatalogoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA1wGIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T21:09:58.177Z",
-              "IsPinned": true,
+              "WhenOpened": "2025-04-27T23:34:15.458Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Crear.cshtml",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Crear.cshtml",
-              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Catalogo\\Crear.cshtml",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Crear.cshtml",
-              "RelativeToolTip": "TiendaVirtual\\Views\\Catalogo\\Crear.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAmwEMAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-27T21:11:51.691Z",
+              "WhenOpened": "2025-04-27T21:55:10.775Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
-              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
-              "RelativeToolTip": "TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-27T21:11:13.886Z",
+              "Title": "DBProducto.cs",
+              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Data\\DBProducto.cs",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Data\\DBProducto.cs",
+              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Data\\DBProducto.cs",
+              "RelativeToolTip": "TiendaVirtual\\Data\\DBProducto.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwE8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:35:32.629Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CuentaController.cs",
+              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Controllers\\CuentaController.cs",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Controllers\\CuentaController.cs",
+              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Controllers\\CuentaController.cs",
+              "RelativeToolTip": "TiendaVirtual\\Controllers\\CuentaController.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAmwEoAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T23:43:42.836Z",
               "EditorCaption": ""
             }
           ]

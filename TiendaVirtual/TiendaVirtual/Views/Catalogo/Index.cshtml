@@ -2,6 +2,9 @@
 
 @{
     ViewData["Title"] = "Catálogo de Productos";
+    var idRolClaim = User.Claims.FirstOrDefault(c => c.Type == "IdRol")?.Value;
+
+    var idUsuario = Context.Session.GetInt32("IdRol");
 }
 
 <div class="text-center mb-5">
@@ -14,9 +17,7 @@
     <div class="alert alert-success">@TempData["mensaje"]</div>
 }
 
-<a href="/Catalogo/Crear" class="btn btn-primary mb-4 fw-bold">
-    <i class="bi bi-plus-circle"></i> Añadir Producto
-</a>
+
 
 <form method="get" class="row g-2 mb-4">
     <div class="col-md-4">
@@ -36,28 +37,36 @@
     </div>
 </form>
 
-
-<!-- Contenedor de los productos -->
+<!-- Contenedor de los productos en cuadrícula -->
 <div class="row justify-content-center">
     @foreach (var item in Model)
     {
-        <div class="card-body">
-            <h5 class="card-title">@item.Nombre</h5>
-            <p><strong>Código:</strong> @item.CodigoProducto</p>
-            <p><strong>Marca:</strong> @item.Marca</p>
-            <p><strong>Precio:</strong> $@item.PrecioUnitario</p>
-            <p><strong>Stock:</strong> @item.Stock</p>
-            <button class="btn btn-outline-primary w-100 mt-2"
-                    data-bs-toggle="modal"
-                    data-bs-target="#productoModal"
-                    data-nombre="@item.Nombre"
-                    data-codigo="@item.CodigoProducto"
-                    data-marca="@item.Marca"
-                    data-precio="$@item.PrecioUnitario"
-                    data-stock="@item.Stock"
-                    data-imagen="@item.Imagen">
-                Ver más
-            </button>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+                <img src="@item.Imagen" class="card-img-top" alt="@item.Nombre" style="height: 200px; object-fit: cover;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title text-primary fw-bold">@item.Nombre</h5>
+                    <p class="card-text mb-1"><strong>Código:</strong> @item.CodigoProducto</p>
+                    <p class="card-text mb-1"><strong>Marca:</strong> @item.Marca</p>
+                    <p class="card-text mb-1"><strong>Precio:</strong> $@item.PrecioUnitario</p>
+                    <p class="card-text mb-3"><strong>Stock:</strong> @item.Stock</p>
+
+                    <div class="mt-auto">
+                        <button class="btn btn-outline-primary w-100 mb-2"
+                                data-bs-toggle="modal"
+                                data-bs-target="#productoModal"
+                                data-nombre="@item.Nombre"
+                                data-codigo="@item.CodigoProducto"
+                                data-marca="@item.Marca"
+                                data-precio="$@item.PrecioUnitario"
+                                data-stock="@item.Stock"
+                                data-imagen="@item.Imagen">
+                            Ver más
+                        </button>
+                        <button class="btn btn-success w-100" disabled>Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
         </div>
     }
 </div>
@@ -85,7 +94,7 @@
     </div>
 </div>
 
-
+<!-- Paginación -->
 <nav aria-label="Paginación del catálogo">
     <ul class="pagination justify-content-center">
         @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
@@ -100,6 +109,7 @@
     </ul>
 </nav>
 
+<!-- Script del modal -->
 <script>
     const productoModal = document.getElementById('productoModal');
     productoModal.addEventListener('show.bs.modal', function (event) {

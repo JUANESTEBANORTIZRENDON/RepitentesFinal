@@ -7,6 +7,7 @@ using TiendaVirtual.Data;
 using MimeKit;
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Http;
 
 
 namespace TiendaVirtual.Controllers
@@ -69,12 +70,11 @@ namespace TiendaVirtual.Controllers
         // Página de inicio de sesión
         public IActionResult Login() => View();
 
+
         [HttpPost]
         public async Task<IActionResult> Login(string correo, string clave)
         {
-            // Aquí puedes aplicar hash si estás almacenando las contraseñas hasheadas
-            // Si no estás usando hash, simplemente usa la clave directa.
-            // string claveHash = Hashear(clave); 
+            // Verifica el usuario con la base de datos
             var usuario = await _dbUsuario.LoginAsync(correo, clave);
 
             if (usuario == null)
@@ -83,16 +83,20 @@ namespace TiendaVirtual.Controllers
                 return View();
             }
 
-            // Aquí obtenemos el nombre del rol usando el id_rol:
+            // Obtener el nombre del rol por el IdRol del usuario
             string nombreRol = await _dbUsuario.ObtenerNombreRolAsync((int)usuario.IdRol);
 
-            // Creamos los claims correctamente:
+            // Crear los claims para la cookie
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.Name, usuario.Nombre),
-        new Claim(ClaimTypes.Role, nombreRol),
-        new Claim("correo", usuario.Correo)
-    };
+            {
+             new Claim(ClaimTypes.Name, usuario.Nombre),
+             new Claim(ClaimTypes.Role, nombreRol), // Aquí va el nombre del rol (Administrador o Cliente)
+             new Claim("correo", usuario.Correo)
+
+
+            };
+
+            
 
             var identidad = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -100,9 +104,17 @@ namespace TiendaVirtual.Controllers
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(identidad));
 
-            return RedirectToAction("Index", "Home");
-        }
+            // Redireccionar según el rol del usuario
+            if (nombreRol == "Administrador")
+            {
+                return RedirectToAction("Admin", "Home");
 
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home"); // Vista normal del cliente
+            }
+        }
 
 
         // Cerrar sesión

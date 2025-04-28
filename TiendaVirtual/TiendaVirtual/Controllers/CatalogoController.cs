@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Security.Claims;
+using Microsoft.AspNetCore.Mvc;
 using TiendaVirtual.Data;
 using TiendaVirtual.Models;
 
@@ -67,5 +68,34 @@ namespace TiendaVirtual.Controllers
             }
             return View(producto);
         }
+
+        //Metodo para mostrar catalogo a Administrador 
+        public IActionResult AdminCatalogo(string busqueda, string orden, int pagina = 1, int tamañoPagina = 8)
+        {
+            //  Simplemente cargamos la vista, sin validar rol aquí (la validación es lógica desde el login/navegación)
+
+            int totalProductos;
+            var productos = DBProducto.ObtenerProductosFiltrados(busqueda, pagina, tamañoPagina, out totalProductos);
+
+            productos = orden switch
+            {
+                "precio_asc" => productos.OrderBy(p => p.PrecioUnitario).ToList(),
+                "precio_desc" => productos.OrderByDescending(p => p.PrecioUnitario).ToList(),
+                "stock_asc" => productos.OrderBy(p => p.Stock).ToList(),
+                "stock_desc" => productos.OrderByDescending(p => p.Stock).ToList(),
+                _ => productos
+            };
+
+            ViewBag.PaginaActual = pagina;
+            ViewBag.TotalPaginas = (int)Math.Ceiling((double)totalProductos / tamañoPagina);
+            ViewBag.Busqueda = busqueda;
+            ViewBag.Orden = orden;
+
+            return View("AdminCatalogo", productos); //  Aquí llamas la vista AdminCatalogo.cshtml directamente
+        }
+
+
+
+
     }
 }

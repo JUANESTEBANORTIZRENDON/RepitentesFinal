@@ -1,0 +1,31 @@
+﻿@model TiendaVirtual.Models.Usuario
+@{
+    ViewData["Title"] = "Eliminar Usuario";
+}
+
+<h2>Eliminar Usuario</h2>
+
+<h4>¿Estás seguro de que deseas eliminar este usuario?</h4>
+<div class="alert alert-warning">
+    <strong>Esta acción no se puede deshacer.</strong>
+</div>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Nombre</dt>
+        <dd class="col-sm-10">@Model.Nombre</dd>
+
+        <dt class="col-sm-2">Correo</dt>
+        <dd class="col-sm-10">@Model.Correo</dd>
+
+        <dt class="col-sm-2">Rol</dt>
+        <dd class="col-sm-10">@Model.IdRolNavigation?.Nombre</dd>
+    </dl>
+
+    <form asp-action="Eliminar">
+        <input type="hidden" asp-for="IdUsuario" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+

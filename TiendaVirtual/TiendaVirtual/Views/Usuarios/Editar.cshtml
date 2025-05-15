@@ -1,0 +1,44 @@
+﻿@model TiendaVirtual.Models.Usuario
+@{
+    ViewData["Title"] = "Editar Usuario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@if (ViewBag.MensajeSinCambios != null)
+{
+    <div class="alert alert-warning">@ViewBag.MensajeSinCambios</div>
+}
+
+
+<h2>Editar Usuario</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="IdUsuario" />
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Correo" class="form-label"></label>
+        <input asp-for="Correo" class="form-control" />
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="Telefono" class="form-label"></label>
+        <input asp-for="Telefono" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Direccion" class="form-label"></label>
+        <input asp-for="Direccion" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="Edad" class="form-label"></label>
+        <input asp-for="Edad" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>Confirmado</label>
+        <input asp-for="Confirmado" type="checkbox" />
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+    <a asp-action="Index" class="btn btn-secondary">Volver</a>
+</form>

@@ -1,0 +1,28 @@
+﻿@model TiendaVirtual.Models.Usuario
+@{
+    ViewData["Title"] = "Cambiar Rol";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var roles = ViewBag.Roles as List<TiendaVirtual.Models.Rol>;
+}
+
+<h2>Cambiar Rol</h2>
+
+<form asp-action="CambiarRol" method="post">
+    <input type="hidden" name="id" value="@Model.IdUsuario" />
+
+    <div class="mb-3">
+        <label for="nuevoRolId" class="form-label">Seleccione un rol</label>
+        <select class="form-select" name="nuevoRolId">
+            @foreach (var rol in roles)
+            {
+                <option value="@rol.IdRol" selected="@(rol.IdRol == Model.IdRol)">
+                    @rol.Nombre
+                </option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar Rol</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+

@@ -55,11 +55,12 @@ public class DBUsuario
             return false; // No existe el usuario o no está confirmado
 
         usuario.TokenRecuperacion = Guid.NewGuid().ToString();
-        usuario.ExpiracionTokenRecuperacion = DateTime.Now.AddHours(1);
-      
+        usuario.ExpiracionTokenRecuperacion = DateTime.UtcNow.AddHours(1);
+
+
 
         await _context.SaveChangesAsync();
-        return true; 
+        return true;
     }
 
 
@@ -71,7 +72,8 @@ public class DBUsuario
         if (string.IsNullOrWhiteSpace(token) || string.IsNullOrWhiteSpace(nuevaClave))
             return false; // Validamos entradas
 
-        var fechaActual = DateTime.Now;
+        var fechaActual = DateTime.UtcNow;
+
 
         // Buscamos el usuario con el token y que el token no haya expirado
         var usuario = await _context.Usuarios
@@ -104,7 +106,7 @@ public class DBUsuario
         return rol?.Nombre ?? "SinRol";
     }
 
-    
+
     public async Task<Usuario> ObtenerUsuarioPorCorreoAsync(string correo)
     {
         return await _context.Usuarios.FirstOrDefaultAsync(u => u.Correo == correo && u.Confirmado);
@@ -136,12 +138,93 @@ public class DBUsuario
     // Método para obtener el usuario por token y validar expiración del token
     public async Task<Usuario> ObtenerUsuarioPorTokenAsync(string token)
     {
-        var fechaActual = DateTime.Now;
+        var fechaActual = DateTime.UtcNow;
+
         return await _context.Usuarios
             .FirstOrDefaultAsync(u => u.TokenRecuperacion == token && u.ExpiracionTokenRecuperacion > fechaActual);
     }
 
 
+    public async Task<bool> ActualizarUsuarioAsync(Usuario usuarioModificado)
+    {
+        var usuarioExistente = await _context.Usuarios.FirstOrDefaultAsync(u => u.IdUsuario == usuarioModificado.IdUsuario);
+        if (usuarioExistente == null) return false;
+
+        bool hayCambios = false;
+
+        if (usuarioExistente.Nombre != usuarioModificado.Nombre)
+        {
+            usuarioExistente.Nombre = usuarioModificado.Nombre;
+            hayCambios = true;
+        }
+
+        if (usuarioExistente.Correo != usuarioModificado.Correo)
+        {
+            usuarioExistente.Correo = usuarioModificado.Correo;
+            hayCambios = true;
+        }
+
+        if (usuarioExistente.Telefono != usuarioModificado.Telefono)
+        {
+            usuarioExistente.Telefono = usuarioModificado.Telefono;
+            hayCambios = true;
+        }
+
+        if (usuarioExistente.Direccion != usuarioModificado.Direccion)
+        {
+            usuarioExistente.Direccion = usuarioModificado.Direccion;
+            hayCambios = true;
+        }
+
+        if (usuarioExistente.Edad != usuarioModificado.Edad)
+        {
+            usuarioExistente.Edad = usuarioModificado.Edad;
+            hayCambios = true;
+        }
+
+        if (usuarioExistente.Confirmado != usuarioModificado.Confirmado)
+        {
+            usuarioExistente.Confirmado = usuarioModificado.Confirmado;
+            hayCambios = true;
+        }
+
+        if (!hayCambios) return false;
+
+        _context.Usuarios.Update(usuarioExistente);
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
+
+    // Cambiar contraseña desde el panel de administración
+    public async Task<bool> CambiarClaveAsync(int idUsuario, string nuevaClave)
+    {
+        var usuario = await _context.Usuarios.FindAsync(idUsuario);
+        if (usuario == null) return false;
+
+        usuario.Clave = BCrypt.Net.BCrypt.HashPassword(nuevaClave);
+        _context.Usuarios.Update(usuario);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+    // Cambiar rol de un usuario
+    public async Task<bool> CambiarRolAsync(int idUsuario, int nuevoRolId)
+    {
+        var usuario = await _context.Usuarios.FindAsync(idUsuario);
+        if (usuario == null) return false;
+
+        if (usuario.IdRol == nuevoRolId) return false; // no hacer nada si el rol es igual
+
+        usuario.IdRol = nuevoRolId;
+        _context.Usuarios.Update(usuario);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+
+
+
 
 }
+
 

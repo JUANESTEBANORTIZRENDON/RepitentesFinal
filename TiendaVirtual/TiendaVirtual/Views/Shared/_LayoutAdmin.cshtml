@@ -1,5 +1,4 @@
-﻿<
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
@@ -65,7 +64,8 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times; Cerrar</a>
         <a asp-controller="Home" asp-action="Admin"><i class="fas fa-home"></i> Inicio Admin</a>
         <a asp-controller="Usuarios" asp-action="Index"><i class="fas fa-users"></i> Gestionar Usuarios</a>
-        <a asp-controller="Catalogo" asp-action="AdminCatalogo"><i class="fas fa-box"></i> Gestionar Productos</a>
+        <a asp-controller="AdminProducto" asp-action="Index"><i class="fas fa-box"></i> Gestionar Productos</a>
+        <a asp-controller="Categoria" asp-action="Index"><i class="fas fa-tags"></i> Gestionar Categorías</a> <!-- NUEVO -->
         <a asp-controller="Ventas" asp-action="Index"><i class="fas fa-shopping-cart"></i> Gestionar Ventas</a>
         <a asp-controller="Cuenta" asp-action="Logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
     </div>
@@ -105,3 +105,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+

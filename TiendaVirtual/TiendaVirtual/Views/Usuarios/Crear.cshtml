@@ -1,0 +1,55 @@
+﻿@model TiendaVirtual.Models.Usuario
+
+@{
+    ViewData["Title"] = "Crear Usuario";
+    var roles = ViewBag.Roles as List<TiendaVirtual.Models.Rol>;
+}
+
+<h2>Registrar Usuario</h2>
+
+<form asp-action="Crear">
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Correo</label>
+        <input asp-for="Correo" class="form-control" type="email" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Clave</label>
+        <input asp-for="Clave" class="form-control" type="password" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Teléfono</label>
+        <input asp-for="Telefono" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Dirección</label>
+        <input asp-for="Direccion" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Edad</label>
+        <input asp-for="Edad" class="form-control" type="number" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Rol</label>
+        <select asp-for="IdRol" class="form-select">
+            <option value="">Seleccione un rol</option>
+            @foreach (var rol in roles)
+            {
+                <option value="@rol.IdRol">@rol.Nombre</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+

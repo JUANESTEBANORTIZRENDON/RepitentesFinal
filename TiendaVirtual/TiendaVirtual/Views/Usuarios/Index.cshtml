@@ -1,0 +1,57 @@
+﻿@model List<TiendaVirtual.Models.Usuario>
+@{
+    ViewData["Title"] = "Usuarios";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="mb-4">Gestión de Usuarios</h2>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["mensaje"]</div>
+}
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">@TempData["error"]</div>
+}
+
+<a asp-action="Crear" class="btn btn-success mb-3">Agregar nuevo usuario</a>
+
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Edad</th>
+            <th>Rol</th>
+            <th>Confirmado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            <tr>
+                <td>@u.Nombre</td>
+                <td>@u.Correo</td>
+                <td>@u.Telefono</td>
+                <td>@u.Direccion</td>
+                <td>@u.Edad</td>
+                <td>@u.IdRolNavigation?.Nombre</td>
+                <td>@(u.Confirmado ? "Sí" : "No")</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@u.IdUsuario" class="btn btn-sm btn-warning">Editar</a>
+                    <a asp-action="CambiarClave" asp-route-id="@u.IdUsuario" class="btn btn-sm btn-info">Contraseña</a>
+                    <a asp-action="CambiarRol" asp-route-id="@u.IdUsuario" class="btn btn-sm btn-secondary">Rol</a>
+                    <a asp-action="Eliminar" asp-route-id="@u.IdUsuario" class="btn btn-sm btn-danger"
+                       onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?');">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

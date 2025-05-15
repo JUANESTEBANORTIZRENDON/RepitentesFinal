@@ -1,25 +1,54 @@
 ﻿@model TiendaVirtual.Models.Usuario
 @{
-    ViewData["Title"] = "Registro de Usuario";
+    ViewData["Title"] = "Registro de usuario";
 }
 
 <h2>Registro de Usuario</h2>
 
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
 <form asp-action="Registrar" method="post">
     <div class="mb-3">
-        <label>Nombre:</label>
-        <input asp-for="Nombre" class="form-control" required />
+        <label asp-for="Nombre" class="form-label">Nombre completo</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label>Correo electrónico:</label>
-        <input asp-for="Correo" class="form-control" required />
-        <span asp-validation-for="Correo" class="text-danger"></span> <!-- Aquí se mostrará el error -->
+        <label asp-for="Correo" class="form-label">Correo electrónico</label>
+        <input asp-for="Correo" class="form-control" type="email" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
     </div>
+
     <div class="mb-3">
-        <label>Contraseña:</label>
-        <input asp-for="Clave" type="password" class="form-control" required />
+        <label asp-for="Telefono" class="form-label">Teléfono</label>
+        <input asp-for="Telefono" class="form-control" />
+        <span asp-validation-for="Telefono" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-success">Registrarse</button>
+
+    <div class="mb-3">
+        <label asp-for="Direccion" class="form-label">Dirección</label>
+        <input asp-for="Direccion" class="form-control" />
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Edad" class="form-label">Edad</label>
+        <input asp-for="Edad" class="form-control" type="number" min="0" />
+        <span asp-validation-for="Edad" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Clave" class="form-label">Contraseña</label>
+        <input asp-for="Clave" class="form-control" type="password" />
+        <span asp-validation-for="Clave" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <a asp-action="Login" class="btn btn-secondary">Volver al inicio de sesión</a>
 </form>
 
 @section Scripts {

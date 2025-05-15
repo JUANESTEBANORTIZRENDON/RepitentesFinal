@@ -1,101 +1,67 @@
-﻿using System.Security.Claims;
-using Microsoft.AspNetCore.Mvc;
-using TiendaVirtual.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Models;
 
 namespace TiendaVirtual.Controllers
 {
     public class CatalogoController : Controller
     {
-        // Mostrar todos los productos
-        public IActionResult Index(string busqueda, string orden, int pagina = 1, int tamañoPagina = 8)
-        {
-            var productos = DBProducto.ObtenerProductos();
+        private readonly ApplicationDbContext _context;
 
-            if (!string.IsNullOrEmpty(busqueda))
+        public CatalogoController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public IActionResult Index(string busqueda, string orden, int pagina = 1, int tamanoPagina = 8)
+        {
+            var query = _context.Productos
+                .Include(p => p.IdCategoriaNavigation)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(busqueda))
             {
-                productos = productos.Where(p =>
-                    p.Nombre.Contains(busqueda, StringComparison.OrdinalIgnoreCase) ||
-                    p.Marca.Contains(busqueda, StringComparison.OrdinalIgnoreCase) ||
-                    p.CodigoProducto.Contains(busqueda, StringComparison.OrdinalIgnoreCase)
-                ).ToList();
+                query = query.Where(p =>
+                    p.Nombre.Contains(busqueda) ||
+                    p.Marca.Contains(busqueda) ||
+                    p.CodigoProducto.Contains(busqueda));
             }
 
-            productos = orden switch
+            switch (orden)
             {
-                "precio_asc" => productos.OrderBy(p => p.PrecioUnitario).ToList(),
-                "precio_desc" => productos.OrderByDescending(p => p.PrecioUnitario).ToList(),
-                "stock_asc" => productos.OrderBy(p => p.Stock).ToList(),
-                "stock_desc" => productos.OrderByDescending(p => p.Stock).ToList(),
-                _ => productos
-            };
+                case "precio_asc":
+                    query = query.OrderBy(p => p.PrecioUnitario);
+                    break;
+                case "precio_desc":
+                    query = query.OrderByDescending(p => p.PrecioUnitario);
+                    break;
+                case "stock_asc":
+                    query = query.OrderBy(p => p.Stock);
+                    break;
+                case "stock_desc":
+                    query = query.OrderByDescending(p => p.Stock);
+                    break;
+            }
 
-            int totalProductos = productos.Count;
-            var productosPaginados = productos.Skip((pagina - 1) * tamañoPagina).Take(tamañoPagina).ToList();
+            int totalProductos = query.Count();
+            var productos = query
+                .Skip((pagina - 1) * tamanoPagina)
+                .Take(tamanoPagina)
+                .ToList();
 
+            // ✅ Cargar las categorías y pasarlas a la vista como diccionario
+            var categorias = _context.Categoria.ToDictionary(c => c.IdCategoria, c => c.Nombre);
+            ViewBag.Categorias = categorias;
+
+            ViewBag.TotalPaginas = (int)Math.Ceiling((double)totalProductos / tamanoPagina);
             ViewBag.PaginaActual = pagina;
-            ViewBag.TotalPaginas = (int)Math.Ceiling((double)totalProductos / tamañoPagina);
             ViewBag.Busqueda = busqueda;
             ViewBag.Orden = orden;
 
-            return View(productosPaginados);
+            return View(productos);
         }
-
-
-        // Mostrar formulario para crear producto (GET)
-        [HttpGet]
-        public IActionResult Crear()
-        {
-            return View();
-        }
-
-        // Registrar nuevo producto (POST)
-        [HttpPost]
-        public IActionResult Crear(Producto producto)
-        {
-            if (ModelState.IsValid)
-            {
-                bool insertado = DBProducto.InsertarProducto(producto);
-                if (insertado)
-                {
-                    TempData["mensaje"] = "Producto registrado correctamente.";
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    ViewBag.Error = "Hubo un error al registrar el producto.";
-                }
-            }
-            return View(producto);
-        }
-
-        //Metodo para mostrar catalogo a Administrador 
-        public IActionResult AdminCatalogo(string busqueda, string orden, int pagina = 1, int tamañoPagina = 8)
-        {
-            //  Simplemente cargamos la vista, sin validar rol aquí (la validación es lógica desde el login/navegación)
-
-            int totalProductos;
-            var productos = DBProducto.ObtenerProductosFiltrados(busqueda, pagina, tamañoPagina, out totalProductos);
-
-            productos = orden switch
-            {
-                "precio_asc" => productos.OrderBy(p => p.PrecioUnitario).ToList(),
-                "precio_desc" => productos.OrderByDescending(p => p.PrecioUnitario).ToList(),
-                "stock_asc" => productos.OrderBy(p => p.Stock).ToList(),
-                "stock_desc" => productos.OrderByDescending(p => p.Stock).ToList(),
-                _ => productos
-            };
-
-            ViewBag.PaginaActual = pagina;
-            ViewBag.TotalPaginas = (int)Math.Ceiling((double)totalProductos / tamañoPagina);
-            ViewBag.Busqueda = busqueda;
-            ViewBag.Orden = orden;
-
-            return View("AdminCatalogo", productos); //  Aquí llamas la vista AdminCatalogo.cshtml directamente
-        }
-
-
-
 
     }
 }
+
+

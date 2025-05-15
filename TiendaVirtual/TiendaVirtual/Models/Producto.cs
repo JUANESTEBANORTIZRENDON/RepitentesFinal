@@ -19,7 +19,11 @@ public partial class Producto
 
     public string? Imagen { get; set; }
 
+    public int? IdCategoria { get; set; }
+
     public virtual ICollection<CarritoProducto> CarritoProductos { get; set; } = new List<CarritoProducto>();
 
     public virtual ICollection<FacturaDetalle> FacturaDetalles { get; set; } = new List<FacturaDetalle>();
+
+    public virtual Categorium? IdCategoriaNavigation { get; set; }
 }

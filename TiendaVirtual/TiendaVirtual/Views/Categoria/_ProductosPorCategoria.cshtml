@@ -1,0 +1,38 @@
+﻿@model List<TiendaVirtual.Models.Producto>
+
+<h4>Productos en la categoría: @ViewBag.CategoriaSeleccionada</h4>
+
+@if (!Model.Any())
+{
+    <p>No hay productos en esta categoría.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var prod in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm border-success">
+                    @if (!string.IsNullOrEmpty(prod.Imagen))
+                    {
+                        <img src="@prod.Imagen" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Imagen del producto">
+                    }
+                    else
+                    {
+                        <img src="https://via.placeholder.com/400x200?text=Sin+Imagen" class="card-img-top img-fluid" alt="Sin imagen">
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@prod.Nombre</h5>
+                        <p class="card-text">
+                            <strong>Marca:</strong> @prod.Marca <br />
+                            <strong>Precio:</strong> $@prod.PrecioUnitario <br />
+                            <strong>Stock:</strong> @prod.Stock
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+

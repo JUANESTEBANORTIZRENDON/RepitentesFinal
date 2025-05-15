@@ -19,6 +19,8 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<CarritoProducto> CarritoProductos { get; set; }
 
+    public virtual DbSet<Categorium> Categoria { get; set; }
+
     public virtual DbSet<Factura> Facturas { get; set; }
 
     public virtual DbSet<FacturaDetalle> FacturaDetalles { get; set; }
@@ -77,6 +79,22 @@ public partial class ApplicationDbContext : DbContext
                 .HasForeignKey(d => d.IdProducto)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("carrito_producto_id_producto_fkey");
+        });
+
+        modelBuilder.Entity<Categorium>(entity =>
+        {
+            entity.HasKey(e => e.IdCategoria).HasName("categoria_pkey");
+
+            entity.ToTable("categoria");
+
+            entity.HasIndex(e => e.Nombre, "categoria_nombre_key").IsUnique();
+
+            entity.Property(e => e.IdCategoria)
+                .UseIdentityAlwaysColumn()
+                .HasColumnName("id_categoria");
+            entity.Property(e => e.Nombre)
+                .HasMaxLength(100)
+                .HasColumnName("nombre");
         });
 
         modelBuilder.Entity<Factura>(entity =>
@@ -161,9 +179,8 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.CodigoProducto)
                 .HasMaxLength(50)
                 .HasColumnName("codigo_producto");
-            entity.Property(e => e.Imagen)
-                .HasMaxLength(10000)
-                .HasColumnName("imagen");
+            entity.Property(e => e.IdCategoria).HasColumnName("id_categoria");
+            entity.Property(e => e.Imagen).HasColumnName("imagen");
             entity.Property(e => e.Marca)
                 .HasMaxLength(50)
                 .HasColumnName("marca");
@@ -174,6 +191,10 @@ public partial class ApplicationDbContext : DbContext
                 .HasPrecision(10, 2)
                 .HasColumnName("precio_unitario");
             entity.Property(e => e.Stock).HasColumnName("stock");
+
+            entity.HasOne(d => d.IdCategoriaNavigation).WithMany(p => p.Productos)
+                .HasForeignKey(d => d.IdCategoria)
+                .HasConstraintName("producto_id_categoria_fkey");
         });
 
         modelBuilder.Entity<Rol>(entity =>
@@ -210,9 +231,7 @@ public partial class ApplicationDbContext : DbContext
                 .HasMaxLength(150)
                 .HasColumnName("direccion");
             entity.Property(e => e.Edad).HasColumnName("edad");
-            entity.Property(e => e.ExpiracionTokenRecuperacion)
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("expiracion_token_recuperacion");
+            entity.Property(e => e.ExpiracionTokenRecuperacion).HasColumnName("expiracion_token_recuperacion");
             entity.Property(e => e.IdRol).HasColumnName("id_rol");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)

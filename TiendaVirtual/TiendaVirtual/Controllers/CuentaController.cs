@@ -96,7 +96,7 @@ namespace TiendaVirtual.Controllers
 
             };
 
-            
+
 
             var identidad = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
@@ -233,3 +233,4 @@ namespace TiendaVirtual.Controllers
         }
     }
 }
+

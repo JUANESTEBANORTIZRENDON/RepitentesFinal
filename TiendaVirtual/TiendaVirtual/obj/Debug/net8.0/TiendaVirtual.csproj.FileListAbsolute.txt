@@ -142,3 +142,4 @@ D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\refin
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\TiendaVirtual.pdb
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\TiendaVirtual.genruntimeconfig.cache
 D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\ref\TiendaVirtual.dll
+D:\AlmacenGit\TrabajoFinalPoo\TiendaVirtual\TiendaVirtual\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

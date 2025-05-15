@@ -1,0 +1,23 @@
+﻿@model TiendaVirtual.Models.Categorium
+@{
+    ViewData["Title"] = "Editar Categoría";
+}
+
+<h2>Editar Categoría</h2>
+
+<form asp-action="Editar" method="post">
+    <input type="hidden" asp-for="IdCategoria" />
+
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label">Nombre</label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Actualizar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

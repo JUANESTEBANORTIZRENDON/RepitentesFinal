@@ -1,0 +1,20 @@
+﻿@model TiendaVirtual.Models.Usuario
+@{
+    ViewData["Title"] = "Cambiar Contraseña";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Cambiar Contraseña</h2>
+
+<form asp-action="CambiarClave" method="post">
+    <input type="hidden" name="id" value="@Model.IdUsuario" />
+
+    <div class="mb-3">
+        <label for="nuevaClave" class="form-label">Nueva Contraseña</label>
+        <input type="password" class="form-control" name="nuevaClave" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar Contraseña</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+

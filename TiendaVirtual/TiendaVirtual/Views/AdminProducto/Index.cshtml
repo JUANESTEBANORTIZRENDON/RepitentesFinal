@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+}
+
+@model List<TiendaVirtual.Models.Producto>
+@{
+    ViewData["Title"] = "Gestión de Productos";
+    var categorias = ViewBag.Categorias as Dictionary<int, string>;
+}
+
+<h2 class="mb-4">Productos</h2>
+
+<a asp-action="Crear" class="btn btn-success mb-3">Agregar nuevo producto</a>
+
+<form method="get" class="row mb-4 g-2">
+    <div class="col-md-4">
+        <input type="text" name="busqueda" class="form-control" placeholder="Buscar..." value="@ViewBag.Busqueda" />
+    </div>
+    <div class="col-md-4">
+        <select name="orden" class="form-select">
+            <option value="">Ordenar por</option>
+            <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
+            <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
+            <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
+            <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
+        </select>
+    </div>
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary w-100">Aplicar</button>
+    </div>
+</form>
+
+@if (TempData["mensaje"] != null)
+{
+    <div class="alert alert-success">@TempData["mensaje"]</div>
+}
+@if (TempData["error"] != null)
+{
+    <div class="alert alert-danger">@TempData["error"]</div>
+}
+
+<form asp-action="EliminarSeleccionados" method="post">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th><input type="checkbox" id="selectAll" /></th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Código</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="ids" value="@p.IdProducto" />
+                    </td>
+                    <td>@p.Nombre</td>
+                    <td>@(categorias.ContainsKey(p.IdCategoria ?? 0) ? categorias[p.IdCategoria ?? 0] : "Sin categoría")</td>
+                    <td>@p.Marca</td>
+                    <td>$@p.PrecioUnitario</td>
+                    <td>@p.Stock</td>
+                    <td>@p.CodigoProducto</td>
+                    <td>
+                        @if (!string.IsNullOrWhiteSpace(p.Imagen))
+                        {
+                            <img src="@p.Imagen" alt="Imagen" width="60" height="60" style="object-fit: cover;" />
+                        }
+                        else
+                        {
+                            <span class="text-muted">Sin imagen</span>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <button type="submit" class="btn btn-danger">Eliminar seleccionados</button>
+</form>
+
+@section Scripts {
+    <script>
+        document.getElementById("selectAll").addEventListener("change", function () {
+            var checkboxes = document.querySelectorAll("input[name='ids']");
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = this.checked;
+            }
+        });
+    </script>
+}
+

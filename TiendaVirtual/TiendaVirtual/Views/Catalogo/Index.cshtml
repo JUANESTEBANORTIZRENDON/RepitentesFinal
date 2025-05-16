@@ -52,15 +52,13 @@
                         <button class="btn btn-outline-primary w-100 mb-2"
                                 data-bs-toggle="modal"
                                 data-bs-target="#productoModal"
+                                data-id="@item.IdProducto"
                                 data-nombre="@item.Nombre"
-                                data-codigo="@item.CodigoProducto"
-                                data-marca="@item.Marca"
-                                data-precio="$@item.PrecioUnitario"
+                                data-precio="@item.PrecioUnitario"
                                 data-stock="@item.Stock"
                                 data-imagen="@item.Imagen">
-                            Ver más
+                            Agregar al carrito
                         </button>
-                        <button class="btn btn-success w-100" disabled>Agregar al carrito</button>
                     </div>
                 </div>
             </div>
@@ -68,7 +66,7 @@
     }
 </div>
 
-<!-- Modal -->
+<!-- Modal para añadir al carrito -->
 <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0 shadow">
@@ -76,17 +74,24 @@
                 <h5 class="modal-title" id="productoModalLabel"></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
             </div>
-            <div class="modal-body d-flex flex-wrap align-items-center">
-                <div class="col-md-6 text-center mb-3">
-                    <img id="modalProductoImagen" src="" class="img-fluid rounded shadow-sm" alt="Producto" />
+            <form method="post" asp-controller="Carrito" asp-action="Agregar">
+                <div class="modal-body row align-items-center">
+                    <div class="col-md-6 text-center mb-3">
+                        <img id="modalProductoImagen" src="" class="img-fluid rounded shadow-sm" alt="Producto" />
+                    </div>
+                    <div class="col-md-6">
+                        <input type="hidden" name="IdProducto" id="modalIdProducto" />
+                        <p><strong>Nombre:</strong> <span id="modalProductoNombre"></span></p>
+                        <p><strong>Precio:</strong> $<span id="modalProductoPrecio"></span></p>
+                        <p><strong>Stock disponible:</strong> <span id="modalProductoStock"></span></p>
+                        <div class="mb-3">
+                            <label for="Cantidad" class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" name="Cantidad" id="modalCantidad" value="1" min="1" />
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Añadir al carrito</button>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p><strong>Código:</strong> <span id="modalProductoCodigo"></span></p>
-                    <p><strong>Marca:</strong> <span id="modalProductoMarca"></span></p>
-                    <p><strong>Precio:</strong> <span id="modalProductoPrecio"></span></p>
-                    <p><strong>Stock:</strong> <span id="modalProductoStock"></span></p>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
@@ -111,14 +116,15 @@
     const productoModal = document.getElementById('productoModal');
     productoModal.addEventListener('show.bs.modal', function (event) {
         const button = event.relatedTarget;
-        document.getElementById('productoModalLabel').textContent = button.getAttribute('data-nombre');
-        document.getElementById('modalProductoCodigo').textContent = button.getAttribute('data-codigo');
-        document.getElementById('modalProductoMarca').textContent = button.getAttribute('data-marca');
+        document.getElementById('modalProductoNombre').textContent = button.getAttribute('data-nombre');
         document.getElementById('modalProductoPrecio').textContent = button.getAttribute('data-precio');
         document.getElementById('modalProductoStock').textContent = button.getAttribute('data-stock');
         document.getElementById('modalProductoImagen').src = button.getAttribute('data-imagen');
+        document.getElementById('modalIdProducto').value = button.getAttribute('data-id');
+        document.getElementById('modalCantidad').max = button.getAttribute('data-stock');
     });
 </script>
+
 
 
 

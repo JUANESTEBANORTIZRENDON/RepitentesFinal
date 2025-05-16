@@ -40,6 +40,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Qcm9kdWN0b1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Carrito/FacturaGenerada.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xGYWN0dXJhR2VuZXJhZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Carrito/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Catalogo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0YWxvZ29cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -90,6 +98,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Cuenta/RestablecerConfirmacion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFJlc3RhYmxlY2VyQ29uZmlybWFjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Historial/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yaWFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/AlmacenGit/TrabajoFinalPoo/TiendaVirtual/TiendaVirtual/Views/Home/Admin.cshtml]

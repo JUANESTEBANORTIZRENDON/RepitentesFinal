@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1l5g1N+WNquJEiK5cTAxyXyOYEYBzCMWwx1k3XTFLJQ=",
+  "Hash": "ZkrzHRSyxr/nkkwSwQPOlw4qBMC/66GscgONvR3rBVA=",
   "Source": "TiendaVirtual",
   "BasePath": "_content/TiendaVirtual",
   "Mode": "Default",
@@ -120,6 +120,153 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\EmailTemplates\\RecuperacionPassword.html"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_1.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_1#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "4hc6kqowba",
+      "Integrity": "WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_1.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_2.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_2#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0j4gcmbzdd",
+      "Integrity": "7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_2.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_3.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_3#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3dyb7yn423",
+      "Integrity": "Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_3.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_4.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_4#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "066otmg88k",
+      "Integrity": "yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_4.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_5.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_5#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k6vxa93nge",
+      "Integrity": "HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_5.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_6.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_6#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qopxk2vlha",
+      "Integrity": "SgxlR+85JDZdssmqEDBpmo1av2yMV+bVEWQNZsEENzc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_6.pdf"
+    },
+    {
+      "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_7.pdf",
+      "SourceId": "TiendaVirtual",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\",
+      "BasePath": "_content/TiendaVirtual",
+      "RelativePath": "facturas/factura_7#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i2rjlxskcv",
+      "Integrity": "NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\facturas\\factura_7.pdf"
     },
     {
       "Identity": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\favicon.ico",
@@ -1626,6 +1773,580 @@
         {
           "Name": "integrity",
           "Value": "sha256-5fnlZ2i3wgnd92BPSXGG6RE0mPh8VnIJ3FgWSYGvSZs="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_1.4hc6kqowba.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_1.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42173"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:29:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4hc6kqowba"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_1.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_1.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_1.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "42173"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:29:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_2.0j4gcmbzdd.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40393"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:32:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0j4gcmbzdd"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_2.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_2.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_2.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40393"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:32:04 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_3.3dyb7yn423.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:42:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3dyb7yn423"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_3.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_3.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41327"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 15:42:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_4.066otmg88k.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_4.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:04:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "066otmg88k"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_4.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_4.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_4.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "41493"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:04:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_5.k6vxa93nge.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_5.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40424"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:05:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k6vxa93nge"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_5.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_5.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_5.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40424"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:05:02 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_6.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_6.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SgxlR+85JDZdssmqEDBpmo1av2yMV+bVEWQNZsEENzc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:06:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SgxlR+85JDZdssmqEDBpmo1av2yMV+bVEWQNZsEENzc="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_6.qopxk2vlha.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_6.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SgxlR+85JDZdssmqEDBpmo1av2yMV+bVEWQNZsEENzc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:06:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qopxk2vlha"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_6.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SgxlR+85JDZdssmqEDBpmo1av2yMV+bVEWQNZsEENzc="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_7.i2rjlxskcv.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_7.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:08:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i2rjlxskcv"
+        },
+        {
+          "Name": "label",
+          "Value": "facturas/factura_7.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k="
+        }
+      ]
+    },
+    {
+      "Route": "facturas/factura_7.pdf",
+      "AssetFile": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_7.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40666"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 16 May 2025 16:08:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k="
         }
       ]
     },
@@ -6572,7 +7293,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:29:32 GMT"
+          "Value": "Fri, 16 May 2025 14:57:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6609,7 +7330,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:29:32 GMT"
+          "Value": "Fri, 16 May 2025 14:57:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6654,7 +7375,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:29:32 GMT"
+          "Value": "Fri, 16 May 2025 14:57:40 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6699,7 +7420,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 15 May 2025 05:29:32 GMT"
+          "Value": "Fri, 16 May 2025 14:57:40 GMT"
         },
         {
           "Name": "Cache-Control",

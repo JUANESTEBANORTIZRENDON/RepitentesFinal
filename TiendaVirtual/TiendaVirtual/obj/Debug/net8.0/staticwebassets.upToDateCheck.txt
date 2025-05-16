@@ -1,6 +1,13 @@
 wwwroot\css\site.css
 wwwroot\EmailTemplates\ConfirmacionCuenta.html
 wwwroot\EmailTemplates\RecuperacionPassword.html
+wwwroot\facturas\factura_1.pdf
+wwwroot\facturas\factura_2.pdf
+wwwroot\facturas\factura_3.pdf
+wwwroot\facturas\factura_4.pdf
+wwwroot\facturas\factura_5.pdf
+wwwroot\facturas\factura_6.pdf
+wwwroot\facturas\factura_7.pdf
 wwwroot\favicon.ico
 wwwroot\images\default.png
 wwwroot\js\site.js

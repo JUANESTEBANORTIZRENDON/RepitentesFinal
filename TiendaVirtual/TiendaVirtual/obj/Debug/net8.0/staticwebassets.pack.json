@@ -17,6 +17,34 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_1.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_1.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_2.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_2.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_3.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_3.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_4.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_4.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_5.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_5.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_6.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_6.pdf"
+    },
+    {
+      "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\facturas\\factura_7.pdf",
+      "PackagePath": "staticwebassets\\facturas\\factura_7.pdf"
+    },
+    {
       "Id": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },

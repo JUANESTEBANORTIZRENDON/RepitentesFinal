@@ -1,0 +1,59 @@
+﻿@model TiendaVirtual.Models.Factura
+
+@{
+    ViewData["Title"] = "Factura Generada";
+    var detalles = ViewBag.Detalles as List<TiendaVirtual.Models.FacturaDetalle>;
+}
+
+<div class="container mt-5">
+    <div class="text-center">
+        <h2 class="text-success">¡Compra realizada con éxito!</h2>
+        <p class="lead">Gracias por tu compra. A continuación, encontrarás el resumen de tu factura:</p>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-header bg-primary text-white">
+            <strong>Factura N° @Model.IdFactura</strong>
+        </div>
+        <div class="card-body">
+            <p><strong>Cliente:</strong> @Model.IdUsuario</p>
+            @(Model.Fecha.HasValue ? Model.Fecha.Value.ToString("dd/MM/yyyy HH:mm") : "Fecha no disponible")
+
+            <p><strong>Total:</strong> $@Model.Total</p>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h5>Detalles de la compra:</h5>
+        <table class="table table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in detalles)
+                {
+                    <tr>
+                        <td>@item.IdProductoNavigation.Nombre</td>
+                        <td>$@item.PrecioUnitario</td>
+                        <td>@item.Cantidad</td>
+                        <td>$@(item.Cantidad * item.PrecioUnitario)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="DescargarPDF" asp-route-id="@Model.IdFactura" class="btn btn-outline-dark mt-4">
+            <i class="fas fa-file-pdf"></i> Descargar PDF
+        </a>
+
+        <a href="@Url.Action("Index", "Catalogo")" class="btn btn-secondary ms-3">Volver al Catálogo</a>
+    </div>
+</div>
+

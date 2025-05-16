@@ -1,0 +1,28 @@
+﻿.product-card {
+    border-radius: 12px;
+    border: none;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .product-card h5 {
+        font-size: 1.1rem;
+        color: #FF6F61;
+    }
+
+    .product-card .btn {
+        border-radius: 20px;
+        background: linear-gradient(to right, #74ebd5, #acb6e5);
+        transition: all 0.3s ease;
+    }
+
+        .product-card .btn:hover {
+            background-color: #43cea2;
+            color: #fff;
+            border-color: #FF6F61;
+        }

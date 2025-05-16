@@ -1,0 +1,16 @@
+﻿.navbar {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+    .nav-link:hover {
+        transform: scale(1.05);
+        color: #fcefee !important;
+    }
+}

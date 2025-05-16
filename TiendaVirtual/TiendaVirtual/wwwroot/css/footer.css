@@ -1,0 +1,31 @@
+﻿footer, .custom-footer {
+    background-color: #fcefee;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #2c2c2c;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #fff;
+    color: #ff6f61;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .social-icon:hover {
+        background-color: #ff6f61;
+        color: #fff;
+        transform: translateY(-2px);
+    }

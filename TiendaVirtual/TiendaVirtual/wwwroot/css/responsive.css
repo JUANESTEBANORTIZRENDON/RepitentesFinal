@@ -1,0 +1,9 @@
+﻿@media (max-width: 768px) {
+    .hero-banner {
+        padding: 80px 10px;
+    }
+
+    .auth-container {
+        padding: 1.5rem;
+    }
+}

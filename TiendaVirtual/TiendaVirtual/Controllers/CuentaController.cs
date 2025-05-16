@@ -91,9 +91,8 @@ namespace TiendaVirtual.Controllers
             {
              new Claim(ClaimTypes.Name, usuario.Nombre),
              new Claim(ClaimTypes.Role, nombreRol), // Aquí va el nombre del rol (Administrador o Cliente)
-             new Claim("correo", usuario.Correo)
-
-
+             new Claim("correo", usuario.Correo),
+             new Claim(ClaimTypes.NameIdentifier, usuario.IdUsuario.ToString()) // ✅ Añadido: ID del usuario
             };
 
 

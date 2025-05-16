@@ -1,0 +1,57 @@
+﻿@model List<TiendaVirtual.Models.HistorialCompra>
+
+@{
+    ViewData["Title"] = "Historial de Compras";
+}
+
+<h2 class="mb-4">Historial de Compras</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No tienes compras registradas.</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Factura</th>
+                <th>Fecha</th>
+                <th>Total</th>
+                <th>PDF</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>#@item.IdFactura</td>
+                    <td>@(item.Fecha.HasValue ? item.Fecha.Value.ToString("dd/MM/yyyy HH:mm") : "Sin fecha")</td>
+
+                    <td>$@item.IdFacturaNavigation.Total</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.IdFacturaNavigation.RutaPdf))
+                        {
+                            <a class="btn btn-sm btn-outline-primary" target="_blank" href="@item.IdFacturaNavigation.RutaPdf">Ver PDF</a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">No disponible</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <nav aria-label="Paginación del historial">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
+            {
+                <li class="page-item @(i == ViewBag.PaginaActual ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { pagina = i })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+
+}

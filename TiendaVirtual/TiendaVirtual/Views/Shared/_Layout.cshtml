@@ -29,8 +29,20 @@
                             <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Conocenos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Catalogo" asp-action="Index">Ventas</a>
+                            <a class="nav-link text-dark" asp-controller="Catalogo" asp-action="Index">Catalogo</a>
+
                         </li>
+                        
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Carrito" asp-action="Index">Carrito</a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Historial" asp-action="Index">Mis Compras</a>
+                            </li>
+                        }
                         @if (User.Identity != null && User.Identity.IsAuthenticated)
                         {
 

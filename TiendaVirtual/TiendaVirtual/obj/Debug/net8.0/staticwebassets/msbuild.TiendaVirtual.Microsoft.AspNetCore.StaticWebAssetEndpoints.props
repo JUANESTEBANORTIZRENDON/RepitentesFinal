@@ -36,6 +36,90 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vvm9yqupr9"},{"Name":"integrity","Value":"sha256-5fnlZ2i3wgnd92BPSXGG6RE0mPh8VnIJ3FgWSYGvSZs="},{"Name":"label","Value":"_content/TiendaVirtual/EmailTemplates/RecuperacionPassword.html"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1483"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00225fnlZ2i3wgnd92BPSXGG6RE0mPh8VnIJ3FgWSYGvSZs=\u0022"},{"Name":"Last-Modified","Value":"Mon, 28 Apr 2025 02:51:28 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_1.4hc6kqowba.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_1.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4hc6kqowba"},{"Name":"integrity","Value":"sha256-WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_1.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"42173"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:29:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_1.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_1.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"42173"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022WL8R95XyngSbwqybZyCc5CqBlSQA3OzagSq4k6owF5g=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:29:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_2.0j4gcmbzdd.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0j4gcmbzdd"},{"Name":"integrity","Value":"sha256-7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_2.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40393"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00227I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:32:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_2.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_2.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40393"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u00227I7itZxtyGE5CzvPi9tnXb26ZBbHo5RgSTiTlrXMXFY=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:32:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_3.3dyb7yn423.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_3.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3dyb7yn423"},{"Name":"integrity","Value":"sha256-Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_3.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"41327"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:42:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_3.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_3.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"41327"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 15:42:59 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_4.066otmg88k.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_4.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"066otmg88k"},{"Name":"integrity","Value":"sha256-yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_4.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"41493"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:04:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_4.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_4.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"41493"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022yHXyuUqUGwrDGLnZyRmEA9ocm0tw9xwMNwLnziskK6M=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:04:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_5.k6vxa93nge.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_5.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"k6vxa93nge"},{"Name":"integrity","Value":"sha256-HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_5.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40424"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:05:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_5.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_5.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40424"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022HBq1UI0TP4Bc2NySzxWIdoQ8K2e6Vn4lt6gJGzHV7wI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:05:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_6.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_6.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SgxlR\u002B85JDZdssmqEDBpmo1av2yMV\u002BbVEWQNZsEENzc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40366"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022SgxlR\u002B85JDZdssmqEDBpmo1av2yMV\u002BbVEWQNZsEENzc=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:06:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_6.qopxk2vlha.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_6.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qopxk2vlha"},{"Name":"integrity","Value":"sha256-SgxlR\u002B85JDZdssmqEDBpmo1av2yMV\u002BbVEWQNZsEENzc="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_6.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40366"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022SgxlR\u002B85JDZdssmqEDBpmo1av2yMV\u002BbVEWQNZsEENzc=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:06:27 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_7.i2rjlxskcv.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"i2rjlxskcv"},{"Name":"integrity","Value":"sha256-NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_7.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"40666"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:08:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_7.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_7.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"40666"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022NtetaiJcXHLV/iUT4A3HWn4IXks5Q/gdvTkO53a7W3k=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 16:08:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TiendaVirtual/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -760,13 +844,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\TiendaVirtual.oe45kc7vnm.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 05:29:32 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 14:57:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TiendaVirtual/TiendaVirtual.oe45kc7vnm.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\TiendaVirtual.oe45kc7vnm.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"oe45kc7vnm"},{"Name":"integrity","Value":"sha256-kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo="},{"Name":"label","Value":"_content/TiendaVirtual/TiendaVirtual.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 15 May 2025 05:29:32 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1131"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022kBm2Xz7vAJJDJNSeaPJoa22gdPSlFEt9S0H8s/32Aoo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 16 May 2025 14:57:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

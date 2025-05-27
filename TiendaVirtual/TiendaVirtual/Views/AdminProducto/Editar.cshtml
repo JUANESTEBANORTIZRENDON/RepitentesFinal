@@ -1,7 +1,8 @@
-﻿@model TiendaVirtual.Models.Producto
+@model TiendaVirtual.Models.Producto
 @{
     ViewData["Title"] = "Editar Producto";
     var categorias = ViewBag.Categorias as List<TiendaVirtual.Models.Categorium>;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <h2>Editar Producto</h2>
 <form asp-action="Editar">

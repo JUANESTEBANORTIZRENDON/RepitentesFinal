@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TiendaVirtual.Data;
 using TiendaVirtual.Models;
 
@@ -13,9 +13,10 @@ namespace TiendaVirtual.Controllers
             _context = context;
         }
 
-        public IActionResult Index(string busqueda, string orden)
+        public IActionResult Index(string busqueda, string orden, bool? filtroActivo = null)
         {
-            var productos = DBProducto.ObtenerProductos();
+            // Obtener todos los productos, activos e inactivos
+            var productos = DBProducto.ObtenerProductos(false);
 
             // ✅ Se crea instancia de DBCategoria para llamar método NO estático
             var categorias = new DBCategoria(_context).ObtenerCategorias();
@@ -33,6 +34,12 @@ namespace TiendaVirtual.Controllers
                 ).ToList();
             }
 
+            // Filtro por estado activo/inactivo
+            if (filtroActivo.HasValue)
+            {
+                productos = productos.Where(p => p.Activo == filtroActivo).ToList();
+            }
+
             // Ordenamiento
             productos = orden switch
             {
@@ -43,6 +50,7 @@ namespace TiendaVirtual.Controllers
                 _ => productos
             };
 
+            ViewBag.FiltroActivo = filtroActivo;
             return View(productos);
         }
 
@@ -52,20 +60,32 @@ namespace TiendaVirtual.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult Crear(Producto producto)
+      [HttpPost]
+public IActionResult Crear(Producto producto)
+{
+    ViewBag.Categorias = DBProducto.ObtenerCategorias();
+    if (ModelState.IsValid)
+    {
+        // Validar si el producto ya existe antes de insertar
+        if (DBProducto.ProductoExiste(producto.CodigoProducto, producto.Nombre))
         {
-            ViewBag.Categorias = DBProducto.ObtenerCategorias();
-            if (ModelState.IsValid)
-            {
-                if (DBProducto.InsertarProducto(producto))
-                {
-                    TempData["mensaje"] = "Producto añadido con éxito.";
-                    return RedirectToAction("Index");
-                }
-            }
+            ModelState.AddModelError("", "Ya existe un producto con el mismo código, nombre o marca.");
             return View(producto);
         }
+
+        if (DBProducto.InsertarProducto(producto))
+        {
+            TempData["mensaje"] = "Producto añadido con éxito.";
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            ModelState.AddModelError("", "Ocurrió un error al añadir el producto. Intenta nuevamente.");
+        }
+    }
+    return View(producto);
+}
+
 
         public IActionResult Editar(int id)
         {
@@ -96,7 +116,7 @@ namespace TiendaVirtual.Controllers
         {
             if (ids == null || ids.Count == 0)
             {
-                TempData["error"] = "Debes seleccionar al menos un producto para eliminar.";
+                TempData["error"] = "Debes seleccionar al menos un producto para desactivar.";
                 return RedirectToAction("Index");
             }
 
@@ -105,7 +125,39 @@ namespace TiendaVirtual.Controllers
                 DBProducto.EliminarProducto(id);
             }
 
-            TempData["mensaje"] = "Productos eliminados correctamente.";
+            TempData["mensaje"] = "Productos desactivados correctamente.";
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult CambiarEstado(int id, bool estado)
+        {
+            if (DBProducto.CambiarEstadoProducto(id, estado))
+            {
+                TempData["mensaje"] = $"Producto {(estado ? "activado" : "desactivado")} correctamente.";
+            }
+            else
+            {
+                TempData["error"] = $"Error al {(estado ? "activar" : "desactivar")} el producto.";
+            }
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult ActivarSeleccionados(List<int> ids)
+        {
+            if (ids == null || ids.Count == 0)
+            {
+                TempData["error"] = "Debes seleccionar al menos un producto para activar.";
+                return RedirectToAction("Index");
+            }
+
+            foreach (var id in ids)
+            {
+                DBProducto.CambiarEstadoProducto(id, true);
+            }
+
+            TempData["mensaje"] = "Productos activados correctamente.";
             return RedirectToAction("Index");
         }
     }

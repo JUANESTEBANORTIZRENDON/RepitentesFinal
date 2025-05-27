@@ -1,4 +1,4 @@
-﻿@if (TempData["error"] != null)
+@if (TempData["error"] != null)
 {
     <div class="alert alert-danger">
         @TempData["error"]
@@ -46,10 +46,7 @@ else
                         </td>
                         <td>$@(item.Cantidad * item.PrecioUnitario)</td>
                         <td>
-                            <form asp-action="Eliminar" method="post" class="d-inline">
-                                <input type="hidden" name="idProducto" value="@item.IdProducto" />
-                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                            </form>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto(@item.IdProducto)">Eliminar</button>
                         </td>
                     </tr>
                 }
@@ -70,6 +67,22 @@ else
     <form asp-action="Comprar" method="post" class="mt-3">
         <button type="submit" class="btn btn-success">Comprar y Generar Factura</button>
     </form>
+    
+    <!-- Formulario oculto para eliminar productos -->
+    <form id="eliminarForm" asp-action="Eliminar" method="post" style="display:none;">
+        <input type="hidden" id="idProductoEliminar" name="idProducto" value="" />
+    </form>
+}
+
+@section Scripts {
+    <script>
+        function eliminarProducto(idProducto) {
+            if (confirm('¿Estás seguro de que deseas eliminar este producto del carrito?')) {
+                document.getElementById('idProductoEliminar').value = idProducto;
+                document.getElementById('eliminarForm').submit();
+            }
+        }
+    </script>
 }
 
 

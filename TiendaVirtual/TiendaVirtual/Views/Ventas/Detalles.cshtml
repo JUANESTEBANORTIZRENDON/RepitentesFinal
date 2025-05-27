@@ -1,0 +1,156 @@
+@model TiendaVirtual.Models.Factura
+@{
+    ViewData["Title"] = "Detalles de Venta";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="mb-3">
+    <a asp-action="Index" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left"></i> Volver a la lista de ventas
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Información de la Venta</h5>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">ID Factura:</div>
+                    <div class="col-sm-8">@Model.IdFactura</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">Cliente:</div>
+                    <div class="col-sm-8">
+                        @if (Model.IdUsuarioNavigation != null)
+                        {
+                            <a asp-action="HistorialUsuario" asp-route-id="@Model.IdUsuario">
+                                @Model.IdUsuarioNavigation.Nombre
+                            </a>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Usuario eliminado</span>
+                        }
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">Correo:</div>
+                    <div class="col-sm-8">
+                        @(Model.IdUsuarioNavigation?.Correo ?? "N/A")
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">Teléfono:</div>
+                    <div class="col-sm-8">
+                        @(Model.IdUsuarioNavigation?.Telefono ?? "N/A")
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">Dirección:</div>
+                    <div class="col-sm-8">
+                        @(Model.IdUsuarioNavigation?.Direccion ?? "N/A")
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4 font-weight-bold">Fecha:</div>
+                    <div class="col-sm-8">@Model.Fecha?.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 font-weight-bold">Total:</div>
+                    <div class="col-sm-8 text-success h5">$@Model.Total?.ToString("N2")</div>
+                </div>
+            </div>
+        </div>
+
+        @if (!string.IsNullOrEmpty(Model.RutaPdf))
+        {
+            <div class="mb-4">
+                <a asp-action="DescargarFactura" asp-route-id="@Model.IdFactura" class="btn btn-outline-secondary">
+                    <i class="fas fa-file-pdf"></i> Descargar PDF de la factura
+                </a>
+            </div>
+        }
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Datos de Contacto</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.IdUsuarioNavigation != null)
+                {
+                    <address>
+                        <strong>@Model.IdUsuarioNavigation.Nombre</strong><br>
+                        @if (!string.IsNullOrEmpty(Model.IdUsuarioNavigation.Direccion))
+                        {
+                            @Model.IdUsuarioNavigation.Direccion<br>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.IdUsuarioNavigation.Telefono))
+                        {
+                            <abbr title="Teléfono">Tel:</abbr> @Model.IdUsuarioNavigation.Telefono<br>
+                        }
+                        @if (!string.IsNullOrEmpty(Model.IdUsuarioNavigation.Correo))
+                        {
+                            <abbr title="Correo">Email:</abbr> <a href="mailto:@Model.IdUsuarioNavigation.Correo">@Model.IdUsuarioNavigation.Correo</a>
+                        }
+                    </address>
+                }
+                else
+                {
+                    <p class="text-muted">La información del cliente no está disponible.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm mt-4">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Productos Comprados</h5>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var detalle in Model.FacturaDetalles)
+                    {
+                        <tr>
+                            <td>
+                                @if (detalle.IdProductoNavigation != null)
+                                {
+                                    @detalle.IdProductoNavigation.Nombre
+                                    <small class="text-muted d-block">@detalle.IdProductoNavigation.Marca</small>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">Producto no disponible</span>
+                                }
+                            </td>
+                            <td>$@detalle.PrecioUnitario.ToString("N2")</td>
+                            <td>@detalle.Cantidad</td>
+                            <td class="text-success">$@((detalle.PrecioUnitario * detalle.Cantidad).ToString("N2"))</td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td class="text-success"><strong>$@Model.Total?.ToString("N2")</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,10 @@
-﻿@model TiendaVirtual.Models.Producto
+﻿@Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+@model TiendaVirtual.Models.Producto
 @{
     ViewData["Title"] = "Crear Producto";
     var categorias = ViewBag.Categorias as List<TiendaVirtual.Models.Categorium>;
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <h2>Crear Producto</h2>
 <form asp-action="Crear">

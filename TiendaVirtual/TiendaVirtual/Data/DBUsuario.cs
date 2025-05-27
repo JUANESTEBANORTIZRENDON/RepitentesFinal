@@ -1,4 +1,4 @@
-﻿using TiendaVirtual.Models;
+using TiendaVirtual.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace TiendaVirtual.Data;
@@ -222,9 +222,53 @@ public class DBUsuario
         return true;
     }
 
+    // Eliminar un usuario y todos sus datos relacionados en cascada
+    public async Task<bool> EliminarUsuarioEnCascadaAsync(int idUsuario)
+    {
+        var usuario = await _context.Usuarios
+            .Include(u => u.Carritos)
+                .ThenInclude(c => c.CarritoProductos)
+            .Include(u => u.Facturas)
+                .ThenInclude(f => f.FacturaDetalles)
+            .Include(u => u.HistorialCompras)
+            .FirstOrDefaultAsync(u => u.IdUsuario == idUsuario);
 
+        if (usuario == null) return false;
 
+        try
+        {
+            // Eliminar productos del carrito
+            foreach (var carrito in usuario.Carritos)
+            {
+                _context.CarritoProductos.RemoveRange(carrito.CarritoProductos);
+            }
 
+            // Eliminar carritos
+            _context.Carritos.RemoveRange(usuario.Carritos);
+
+            // Eliminar detalles de facturas
+            foreach (var factura in usuario.Facturas)
+            {
+                _context.FacturaDetalles.RemoveRange(factura.FacturaDetalles);
+            }
+
+            // Eliminar facturas
+            _context.Facturas.RemoveRange(usuario.Facturas);
+
+            // Eliminar historial de compras
+            _context.HistorialCompras.RemoveRange(usuario.HistorialCompras);
+
+            // Finalmente, eliminar el usuario
+            _context.Usuarios.Remove(usuario);
+
+            await _context.SaveChangesAsync();
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
 }
 
 

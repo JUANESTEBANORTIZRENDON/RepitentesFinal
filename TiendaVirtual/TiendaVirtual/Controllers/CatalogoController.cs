@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Models;
 
@@ -17,6 +17,7 @@ namespace TiendaVirtual.Controllers
         {
             var query = _context.Productos
                 .Include(p => p.IdCategoriaNavigation)
+                .Where(p => p.Activo == true || p.Activo == null)
                 .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(busqueda))

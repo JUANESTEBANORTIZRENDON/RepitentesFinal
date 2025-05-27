@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Models;
 using TiendaVirtual.Data;
@@ -118,11 +118,16 @@ namespace TiendaVirtual.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> EliminarConfirmado(int id)
         {
-            var usuario = await _context.Usuarios.FindAsync(id);
-            if (usuario != null)
+            var dbUsuario = new DBUsuario(_context);
+            var resultado = await dbUsuario.EliminarUsuarioEnCascadaAsync(id);
+            
+            if (resultado)
             {
-                _context.Usuarios.Remove(usuario);
-                await _context.SaveChangesAsync();
+                TempData["mensaje"] = "Usuario y todos sus datos relacionados eliminados correctamente.";
+            }
+            else
+            {
+                TempData["error"] = "No se pudo eliminar el usuario. Inténtelo de nuevo.";
             }
 
             return RedirectToAction(nameof(Index));

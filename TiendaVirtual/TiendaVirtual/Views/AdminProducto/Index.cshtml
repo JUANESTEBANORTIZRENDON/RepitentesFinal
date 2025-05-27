@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 
 }
@@ -7,6 +7,7 @@
 @{
     ViewData["Title"] = "Gestión de Productos";
     var categorias = ViewBag.Categorias as Dictionary<int, string>;
+    var filtroActivo = ViewBag.FiltroActivo as bool?;
 }
 
 <h2 class="mb-4">Productos</h2>
@@ -14,10 +15,10 @@
 <a asp-action="Crear" class="btn btn-success mb-3">Agregar nuevo producto</a>
 
 <form method="get" class="row mb-4 g-2">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <input type="text" name="busqueda" class="form-control" placeholder="Buscar..." value="@ViewBag.Busqueda" />
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
         <select name="orden" class="form-select">
             <option value="">Ordenar por</option>
             <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
@@ -26,7 +27,14 @@
             <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
         </select>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
+        <select name="filtroActivo" class="form-select">
+            <option value="">Todos los productos</option>
+            <option value="true" selected="@(filtroActivo == true)">Solo activos</option>
+            <option value="false" selected="@(filtroActivo == false)">Solo inactivos</option>
+        </select>
+    </div>
+    <div class="col-md-3">
         <button type="submit" class="btn btn-primary w-100">Aplicar</button>
     </div>
 </form>
@@ -40,7 +48,23 @@
     <div class="alert alert-danger">@TempData["error"]</div>
 }
 
-<form asp-action="EliminarSeleccionados" method="post">
+<div class="d-flex mb-3">
+    <div class="btn-group">
+        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Acciones en lote
+        </button>
+        <ul class="dropdown-menu">
+            <li>
+                <button type="button" class="dropdown-item" id="btnDesactivarSeleccionados">Desactivar seleccionados</button>
+            </li>
+            <li>
+                <button type="button" class="dropdown-item" id="btnActivarSeleccionados">Activar seleccionados</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<form id="formSeleccionados" asp-action="EliminarSeleccionados" method="post">
     <table class="table table-bordered table-striped">
         <thead class="table-dark">
             <tr>
@@ -52,13 +76,14 @@
                 <th>Stock</th>
                 <th>Código</th>
                 <th>Imagen</th>
+                <th>Estado</th>
                 <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var p in Model)
             {
-                <tr>
+                <tr class="@(p.Activo == false ? "table-danger" : "")">
                     <td>
                         <input type="checkbox" name="ids" value="@p.IdProducto" />
                     </td>
@@ -79,13 +104,32 @@
                         }
                     </td>
                     <td>
-                        <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm">Editar</a>
+                        @if (p.Activo != false)
+                        {
+                            <span class="badge bg-success">Activo</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactivo</span>
+                        }
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm">Editar</a>
+                            <form asp-action="CambiarEstado" method="post" class="d-inline">
+                                <input type="hidden" name="id" value="@p.IdProducto" />
+                                <input type="hidden" name="estado" value="@(p.Activo != false ? "false" : "true")" />
+                                <button type="submit" class="btn btn-sm @(p.Activo != false ? "btn-danger" : "btn-success")">
+                                    @(p.Activo != false ? "Desactivar" : "Activar")
+                                </button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <button type="submit" class="btn btn-danger">Eliminar seleccionados</button>
+    <button type="submit" id="btnDesactivar" class="btn btn-danger">Desactivar seleccionados</button>
 </form>
 
 @section Scripts {
@@ -95,6 +139,18 @@
             for (var i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = this.checked;
             }
+        });
+
+        document.getElementById("btnDesactivarSeleccionados").addEventListener("click", function() {
+            var form = document.getElementById("formSeleccionados");
+            form.action = "@Url.Action("EliminarSeleccionados")";
+            form.submit();
+        });
+
+        document.getElementById("btnActivarSeleccionados").addEventListener("click", function() {
+            var form = document.getElementById("formSeleccionados");
+            form.action = "@Url.Action("ActivarSeleccionados")";
+            form.submit();
         });
     </script>
 }

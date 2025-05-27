@@ -176,6 +176,9 @@ public partial class ApplicationDbContext : DbContext
             entity.HasIndex(e => e.CodigoProducto, "producto_codigo_producto_key").IsUnique();
 
             entity.Property(e => e.IdProducto).HasColumnName("id_producto");
+            entity.Property(e => e.Activo)
+                .HasDefaultValue(true)
+                .HasColumnName("activo");
             entity.Property(e => e.CodigoProducto)
                 .HasMaxLength(50)
                 .HasColumnName("codigo_producto");

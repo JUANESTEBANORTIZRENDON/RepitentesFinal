@@ -1,0 +1,115 @@
+@model IEnumerable<TiendaVirtual.Models.Factura>
+@{
+    ViewData["Title"] = "Historial de Compras";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var usuario = ViewBag.Usuario as TiendaVirtual.Models.Usuario;
+}
+
+<div class="mb-3">
+    <a asp-action="Index" class="btn btn-outline-secondary">
+        <i class="fas fa-arrow-left"></i> Volver a la lista de ventas
+    </a>
+</div>
+
+<div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Información del Cliente</h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>@usuario.Nombre</h4>
+                <p><strong>Correo:</strong> @usuario.Correo</p>
+                <p><strong>Teléfono:</strong> @(usuario.Telefono ?? "No disponible")</p>
+                <p><strong>Dirección:</strong> @(usuario.Direccion ?? "No disponible")</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>ID de Usuario:</strong> @usuario.IdUsuario</p>
+                <p><strong>Edad:</strong> @(usuario.Edad.HasValue ? $"{usuario.Edad} años" : "No disponible")</p>
+                <p><strong>Cuenta confirmada:</strong> @(usuario.Confirmado ? "Sí" : "No")</p>
+                <p><strong>Total de compras:</strong> @Model.Count()</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">Historial de Compras</h5>
+    </div>
+    <div class="card-body">
+        @if (Model.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID Factura</th>
+                            <th>Fecha</th>
+                            <th>Total</th>
+                            <th>Productos</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var factura in Model)
+                        {
+                            <tr>
+                                <td>@factura.IdFactura</td>
+                                <td>@factura.Fecha?.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td class="text-success">$@factura.Total?.ToString("N2")</td>
+                                <td>
+                                    <ul class="mb-0 ps-3">
+                                        @foreach (var detalle in factura.FacturaDetalles.Take(3))
+                                        {
+                                            <li>
+                                                @if (detalle.IdProductoNavigation != null)
+                                                {
+                                                    @($"{detalle.IdProductoNavigation.Nombre} (x{detalle.Cantidad})")
+                                                }
+                                                else
+                                                {
+                                                    <span class="text-muted">Producto no disponible</span>
+                                                }
+                                            </li>
+                                        }
+                                        @if (factura.FacturaDetalles.Count() > 3)
+                                        {
+                                            <li class="text-muted">y @(factura.FacturaDetalles.Count() - 3) productos más...</li>
+                                        }
+                                    </ul>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a asp-action="Detalles" asp-route-id="@factura.IdFactura" class="btn btn-info btn-sm">
+                                            <i class="fas fa-info-circle"></i> Detalles
+                                        </a>
+                                        @if (!string.IsNullOrEmpty(factura.RutaPdf))
+                                        {
+                                            <a asp-action="DescargarFactura" asp-route-id="@factura.IdFactura" class="btn btn-secondary btn-sm">
+                                                <i class="fas fa-file-pdf"></i> PDF
+                                            </a>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-3">
+                <p><strong>Total gastado:</strong> <span class="text-success h5">$@Model.Sum(f => f.Total).Value.ToString("N2")</span></p>
+                <p><strong>Promedio por compra:</strong> <span class="text-success">$@((Model.Sum(f => f.Total).Value / Model.Count()).ToString("N2"))</span></p>
+                <p><strong>Primera compra:</strong> @Model.OrderBy(f => f.Fecha).First().Fecha?.ToString("dd/MM/yyyy")</p>
+                <p><strong>Última compra:</strong> @Model.OrderByDescending(f => f.Fecha).First().Fecha?.ToString("dd/MM/yyyy")</p>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                Este usuario no tiene compras registradas.
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#74ebd5" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#acb6e5" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff6f61" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#fcefee" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#f8f9fa" />
+  <path fill="url(#gradient1)" d="M0,0L48,32C96,64,192,128,288,138.7C384,149,480,107,576,112C672,117,768,171,864,181.3C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z" opacity="0.8"></path>
+  <path fill="url(#gradient2)" d="M0,400L48,373.3C96,347,192,293,288,261.3C384,229,480,219,576,234.7C672,250,768,293,864,309.3C960,325,1056,315,1152,298.7C1248,283,1344,261,1392,250.7L1440,240L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z" opacity="0.6"></path>
+</svg>

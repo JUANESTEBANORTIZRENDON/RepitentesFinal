@@ -1,0 +1,96 @@
+﻿.custom-footer {
+    background-color: #fcefee;
+    padding: 2rem 0 1.5rem;
+    color: #2c2c2c;
+    position: relative;
+    margin-top: 3rem;
+}
+
+    .custom-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #74ebd5, #acb6e5);
+    }
+
+.container a {
+    color: #ff6f61;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+    .container a:hover {
+        color: #acb6e5;
+        text-decoration: underline;
+    }
+
+/* Iconos sociales */
+.social-icons {
+    margin: 1rem 0;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 12px;
+    width: 44px;
+    height: 44px;
+    background: white;
+    color: #ff6f61;
+    border-radius: 50%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+    .social-icon:hover {
+        background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+        color: white;
+        transform: translateY(-4px) scale(1.1);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* WhatsApp destacado */
+    .social-icon.whatsapp {
+        background: #25D366;
+        color: white;
+    }
+
+/* Copyright */
+.custom-footer .container:first-child {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+
+/* Navbar - Mobile */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-link {
+        margin: 0.3rem 0;
+        text-align: center;
+    }
+}
+
+/* Footer - Mobile */
+@media (max-width: 576px) {
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icon {
+        margin: 0.5rem;
+        width: 38px;
+        height: 38px;
+    }
+}

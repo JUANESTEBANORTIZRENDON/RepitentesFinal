@@ -1,18 +1,166 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\",
+  "WorkspaceRootPath": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\categoria\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\categoria\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\views\\categoria\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\historial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\historial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\cambiarclave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\cambiarclave.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\cambiarrol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\cambiarrol.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\usuarios\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\usuarios\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\categoria\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\categoria\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\categoria\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\categoria\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\trabajofinalpoo\\tiendavirtual\\tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\categoria\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\categoria\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\categoria\\_productosporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\categoria\\_productosporcategoria.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\responsive.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\home\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\adminproducto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\adminproducto\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\adminproducto\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\adminproducto\\editar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\adminproducto\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\adminproducto\\crear.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\products.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\products.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\carrito\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\carrito\\facturagenerada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\carrito\\facturagenerada.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\catalogo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\base.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\base.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\catalogo-scroll.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\catalogo-scroll.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\hero-banner.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\hero-banner.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\main.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\footer.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\auth-forms.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\auth-forms.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\animations.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\animations.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|c:\\users\\danit\\onedrive\\escritorio\\trabajos u\\quinto semestre\\poo i\\trabajo\\tiendavirtual\\tiendavirtual\\wwwroot\\css\\modals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\wwwroot\\css\\modals.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +170,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 38,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Program.cs",
               "RelativeDocumentMoniker": "TiendaVirtual\\Program.cs",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Program.cs",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Program.cs",
               "RelativeToolTip": "TiendaVirtual\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -39,29 +187,518 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CambiarRol.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\CambiarRol.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\CambiarRol.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\CambiarRol.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\CambiarRol.cshtml",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwC8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:28:58.849Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CambiarClave.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\CambiarClave.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\CambiarClave.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\CambiarClave.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\CambiarClave.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAywBcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:28:56.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T16:38:29.089Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Historial\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Historial\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Historial\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Historial\\Index.cshtml",
+              "ViewState": "AgIAABMAAAAAAAAAAADwvzAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:07:50.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:36:10.515Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:36:13.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\Index.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAGEAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:29:09.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Eliminar.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Eliminar.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\Eliminar.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Eliminar.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\Eliminar.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAywCoAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:29:12.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Crear.cshtml",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Crear.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\Crear.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Crear.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\Crear.cshtml",
+              "ViewState": "AgIAAEcAAAAAAAAAAADwv2EAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:29:38.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Editar.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Usuarios\\Editar.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Usuarios\\Editar.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Usuarios\\Editar.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAywE0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:29:46.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Categoria\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Categoria\\Index.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAADwv2MAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:23:54.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FacturaGenerada.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Carrito\\FacturaGenerada.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Carrito\\FacturaGenerada.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Carrito\\FacturaGenerada.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Carrito\\FacturaGenerada.cshtml",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:09:57.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Catalogo\\Index.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T16:56:49.355Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Crear.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
               "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
               "RelativeToolTip": "TiendaVirtual\\Views\\Categoria\\Crear.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAywCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-27T14:53:01.542Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "Editar.cshtml",
-              "DocumentMoniker": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
               "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
-              "ToolTip": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
               "RelativeToolTip": "TiendaVirtual\\Views\\Categoria\\Editar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAywCQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-05-27T14:52:54.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ProductosPorCategoria.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\_ProductosPorCategoria.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Categoria\\_ProductosPorCategoria.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Categoria\\_ProductosPorCategoria.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Categoria\\_ProductosPorCategoria.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAywEIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T21:23:14.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\AdminProducto\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\AdminProducto\\Index.cshtml",
+              "ViewState": "AgIAAKUAAAAAAAAAAADwv7wAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:44:15.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Admin.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Admin.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Home\\Admin.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Admin.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Home\\Admin.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:48:41.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAlwL8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T16:38:31.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "responsive.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\responsive.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\responsive.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\responsive.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\responsive.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAADcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:38:07.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Carrito\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Carrito\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Carrito\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Carrito\\Index.cshtml",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAAI8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:09:58.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Crear.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Crear.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\AdminProducto\\Crear.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Crear.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\AdminProducto\\Crear.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:43:25.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Editar.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Editar.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\AdminProducto\\Editar.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\AdminProducto\\Editar.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\AdminProducto\\Editar.cshtml",
+              "ViewState": "AgIAACwAAAAAAAAAAADwv0MAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T20:44:07.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "products.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\products.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\products.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\products.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\products.css",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAuwIkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:37:52.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T18:37:48.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-05-27T18:34:26.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "about.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\about.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\about.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\about.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\about.css",
+              "ViewState": "AgIAALYAAAAAAAAAAAAowNAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T18:40:24.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "catalogo-scroll.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\catalogo-scroll.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\catalogo-scroll.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\catalogo-scroll.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\catalogo-scroll.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:36:15.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "base.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\base.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\base.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\base.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\base.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:35:54.598Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "hero-banner.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\hero-banner.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\hero-banner.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\hero-banner.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\hero-banner.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:36:50.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "main.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\main.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\main.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\main.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\main.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:37:07.479Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T18:15:23.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T18:15:27.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "footer.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\footer.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\footer.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\footer.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\footer.css",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAF8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:36:30.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "navbar.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\navbar.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\navbar.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\navbar.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\navbar.css",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAmwFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:37:39.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "TiendaVirtual\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-27T16:47:59.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "animations.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\animations.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\animations.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\animations.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\animations.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:35:21.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "auth-forms.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\auth-forms.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\auth-forms.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\auth-forms.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\auth-forms.css",
+              "ViewState": "AgIAADQAAAAAAAAAAAAmwEMAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:35:37.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "modals.css",
+              "DocumentMoniker": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\modals.css",
+              "RelativeDocumentMoniker": "TiendaVirtual\\wwwroot\\css\\modals.css",
+              "ToolTip": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\wwwroot\\css\\modals.css",
+              "RelativeToolTip": "TiendaVirtual\\wwwroot\\css\\modals.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-05-27T16:37:24.157Z",
               "EditorCaption": ""
             }
           ]

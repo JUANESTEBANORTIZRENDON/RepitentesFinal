@@ -1,6 +1,5 @@
 @{
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-
 }
 
 @model List<TiendaVirtual.Models.Producto>
@@ -10,148 +9,181 @@
     var filtroActivo = ViewBag.FiltroActivo as bool?;
 }
 
-<h2 class="mb-4">Productos</h2>
-
-<a asp-action="Crear" class="btn btn-success mb-3">Agregar nuevo producto</a>
-
-<form method="get" class="row mb-4 g-2">
-    <div class="col-md-3">
-        <input type="text" name="busqueda" class="form-control" placeholder="Buscar..." value="@ViewBag.Busqueda" />
+<div class="container-fluid py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0"><i class="fas fa-boxes me-2"></i> Productos</h2>
+        <a asp-action="Crear" class="btn btn-success">
+            <i class="fas fa-plus me-1"></i> Agregar Producto
+        </a>
     </div>
-    <div class="col-md-3">
-        <select name="orden" class="form-select">
-            <option value="">Ordenar por</option>
-            <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
-            <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
-            <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
-            <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
-        </select>
-    </div>
-    <div class="col-md-3">
-        <select name="filtroActivo" class="form-select">
-            <option value="">Todos los productos</option>
-            <option value="true" selected="@(filtroActivo == true)">Solo activos</option>
-            <option value="false" selected="@(filtroActivo == false)">Solo inactivos</option>
-        </select>
-    </div>
-    <div class="col-md-3">
-        <button type="submit" class="btn btn-primary w-100">Aplicar</button>
-    </div>
-</form>
 
-@if (TempData["mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["mensaje"]</div>
-}
-@if (TempData["error"] != null)
-{
-    <div class="alert alert-danger">@TempData["error"]</div>
-}
+    @if (TempData["mensaje"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i> @TempData["error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-<div class="d-flex mb-3">
-    <div class="btn-group">
-        <button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            Acciones en lote
-        </button>
-        <ul class="dropdown-menu">
-            <li>
-                <button type="button" class="dropdown-item" id="btnDesactivarSeleccionados">Desactivar seleccionados</button>
-            </li>
-            <li>
-                <button type="button" class="dropdown-item" id="btnActivarSeleccionados">Activar seleccionados</button>
-            </li>
-        </ul>
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        <input type="text" name="busqueda" class="form-control" placeholder="Buscar productos..." value="@ViewBag.Busqueda" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select name="orden" class="form-select">
+                        <option value="">Ordenar por</option>
+                        <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
+                        <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
+                        <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
+                        <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select name="filtroActivo" class="form-select">
+                        <option value="">Todos los productos</option>
+                        <option value="true" selected="@(filtroActivo == true)">Solo activos</option>
+                        <option value="false" selected="@(filtroActivo == false)">Solo inactivos</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-filter me-1"></i> Aplicar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+            <form id="formSeleccionados" asp-action="EliminarSeleccionados" method="post">
+                <div class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary dropdown-toggle" type="button" id="accionesLote" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-tasks me-1"></i> Acciones en lote
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="accionesLote">
+                            <li>
+                                <button type="button" class="dropdown-item" id="btnActivarSeleccionados">
+                                    <i class="fas fa-check-circle text-success me-1"></i> Activar seleccionados
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item" id="btnDesactivarSeleccionados">
+                                    <i class="fas fa-times-circle text-danger me-1"></i> Desactivar seleccionados
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="selectAll">
+                        <label class="form-check-label" for="selectAll">Seleccionar todos</label>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th width="40"></th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Marca</th>
+                                <th class="text-end">Precio</th>
+                                <th class="text-center">Stock</th>
+                                <th>Código</th>
+                                <th>Imagen</th>
+                                <th class="text-center">Estado</th>
+                                <th class="text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var p in Model)
+                            {
+                                <tr class="@(p.Activo == false ? "table-danger" : "")">
+                                    <td>
+                                        <input type="checkbox" name="ids" value="@p.IdProducto" class="form-check-input" />
+                                    </td>
+                                    <td>@p.Nombre</td>
+                                    <td>@(categorias.ContainsKey(p.IdCategoria ?? 0) ? categorias[p.IdCategoria ?? 0] : "Sin categoría")</td>
+                                    <td>@p.Marca</td>
+                                    <td class="text-end">$@p.PrecioUnitario.ToString("N2")</td>
+                                    <td class="text-center">@p.Stock</td>
+                                    <td>@p.CodigoProducto</td>
+                                    <td>
+                                        @if (!string.IsNullOrWhiteSpace(p.Imagen))
+                                        {
+                                            <img src="@p.Imagen" alt="Imagen" width="60" height="60" class="rounded" style="object-fit: cover;" />
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-secondary">Sin imagen</span>
+                                        }
+                                    </td>
+                                    <td class="text-center">
+                                        <span class="badge @(p.Activo != false ? "bg-success" : "bg-danger")">
+                                            @(p.Activo != false ? "Activo" : "Inactivo")
+                                        </span>
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-outline-warning" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <form asp-action="CambiarEstado" method="post" class="d-inline">
+                                                <input type="hidden" name="id" value="@p.IdProducto" />
+                                                <input type="hidden" name="estado" value="@(p.Activo != false ? "false" : "true")" />
+                                                <button type="submit" class="btn @(p.Activo != false ? "btn-outline-danger" : "btn-outline-success")" title="@(p.Activo != false ? "Desactivar" : "Activar")">
+                                                    <i class="@(p.Activo != false ? "fas fa-eye-slash" : "fas fa-eye")"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-<form id="formSeleccionados" asp-action="EliminarSeleccionados" method="post">
-    <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-            <tr>
-                <th><input type="checkbox" id="selectAll" /></th>
-                <th>Nombre</th>
-                <th>Categoría</th>
-                <th>Marca</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Código</th>
-                <th>Imagen</th>
-                <th>Estado</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var p in Model)
-            {
-                <tr class="@(p.Activo == false ? "table-danger" : "")">
-                    <td>
-                        <input type="checkbox" name="ids" value="@p.IdProducto" />
-                    </td>
-                    <td>@p.Nombre</td>
-                    <td>@(categorias.ContainsKey(p.IdCategoria ?? 0) ? categorias[p.IdCategoria ?? 0] : "Sin categoría")</td>
-                    <td>@p.Marca</td>
-                    <td>$@p.PrecioUnitario</td>
-                    <td>@p.Stock</td>
-                    <td>@p.CodigoProducto</td>
-                    <td>
-                        @if (!string.IsNullOrWhiteSpace(p.Imagen))
-                        {
-                            <img src="@p.Imagen" alt="Imagen" width="60" height="60" style="object-fit: cover;" />
-                        }
-                        else
-                        {
-                            <span class="text-muted">Sin imagen</span>
-                        }
-                    </td>
-                    <td>
-                        @if (p.Activo != false)
-                        {
-                            <span class="badge bg-success">Activo</span>
-                        }
-                        else
-                        {
-                            <span class="badge bg-danger">Inactivo</span>
-                        }
-                    </td>
-                    <td>
-                        <div class="btn-group">
-                            <a asp-action="Editar" asp-route-id="@p.IdProducto" class="btn btn-warning btn-sm">Editar</a>
-                            <form asp-action="CambiarEstado" method="post" class="d-inline">
-                                <input type="hidden" name="id" value="@p.IdProducto" />
-                                <input type="hidden" name="estado" value="@(p.Activo != false ? "false" : "true")" />
-                                <button type="submit" class="btn btn-sm @(p.Activo != false ? "btn-danger" : "btn-success")">
-                                    @(p.Activo != false ? "Desactivar" : "Activar")
-                                </button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <button type="submit" id="btnDesactivar" class="btn btn-danger">Desactivar seleccionados</button>
-</form>
 
 @section Scripts {
     <script>
         document.getElementById("selectAll").addEventListener("change", function () {
             var checkboxes = document.querySelectorAll("input[name='ids']");
-            for (var i = 0; i < checkboxes.length; i++) {
-                checkboxes[i].checked = this.checked;
-            }
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = this.checked;
+            }.bind(this));
         });
 
         document.getElementById("btnDesactivarSeleccionados").addEventListener("click", function() {
-            var form = document.getElementById("formSeleccionados");
-            form.action = "@Url.Action("EliminarSeleccionados")";
-            form.submit();
+            if (confirm('¿Está seguro de desactivar los productos seleccionados?')) {
+                var form = document.getElementById("formSeleccionados");
+                form.action = "@Url.Action("EliminarSeleccionados")";
+                form.submit();
+            }
         });
 
         document.getElementById("btnActivarSeleccionados").addEventListener("click", function() {
-            var form = document.getElementById("formSeleccionados");
-            form.action = "@Url.Action("ActivarSeleccionados")";
-            form.submit();
+            if (confirm('¿Está seguro de activar los productos seleccionados?')) {
+                var form = document.getElementById("formSeleccionados");
+                form.action = "@Url.Action("ActivarSeleccionados")";
+                form.submit();
+            }
         });
     </script>
 }
-

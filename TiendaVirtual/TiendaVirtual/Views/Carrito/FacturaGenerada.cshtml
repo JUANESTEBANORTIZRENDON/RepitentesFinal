@@ -5,55 +5,109 @@
     var detalles = ViewBag.Detalles as List<TiendaVirtual.Models.FacturaDetalle>;
 }
 
-<div class="container mt-5">
-    <div class="text-center">
-        <h2 class="text-success">¡Compra realizada con éxito!</h2>
-        <p class="lead">Gracias por tu compra. A continuación, encontrarás el resumen de tu factura:</p>
+<div class="container mt-4 mb-5">
+    <!-- Header con icono y mensaje destacado -->
+    <div class="text-center mb-4">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="bg-success bg-opacity-10 p-3 rounded-circle me-3">
+                <i class="fas fa-check-circle fa-3x text-success"></i>
+            </div>
+            <div class="text-start">
+                <h2 class="text-success mb-1">¡Compra realizada con éxito!</h2>
+                <p class="text-muted mb-0">Tu pedido ha sido procesado correctamente</p>
+            </div>
+        </div>
+        <p class="lead mt-3">Gracias por confiar en nosotros. Aquí tienes el resumen de tu factura:</p>
     </div>
 
-    <div class="card mt-4">
-        <div class="card-header bg-primary text-white">
-            <strong>Factura N° @Model.IdFactura</strong>
+    <!-- Tarjeta de factura mejorada -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-primary text-white py-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0"><i class="fas fa-file-invoice me-2"></i> Factura N° @Model.IdFactura</h5>
+                <span class="badge bg-white text-primary">@(Model.Fecha.HasValue ? Model.Fecha.Value.ToString("dd/MM/yyyy HH:mm") : "Fecha no disponible")</span>
+            </div>
         </div>
         <div class="card-body">
-            <p><strong>Cliente:</strong> @Model.IdUsuario</p>
-            @(Model.Fecha.HasValue ? Model.Fecha.Value.ToString("dd/MM/yyyy HH:mm") : "Fecha no disponible")
-
-            <p><strong>Total:</strong> $@Model.Total</p>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h6 class="text-uppercase text-muted small">Cliente</h6>
+                    <p class="mb-0"><i class="fas fa-user me-2 text-primary"></i> @Model.IdUsuario</p>
+                </div>
+                <div class="col-md-6 mb-3 text-md-end">
+                    <h6 class="text-uppercase text-muted small">Total</h6>
+                    <h4 class="mb-0 text-success">$@(Model.Total?.ToString("N2") ?? "0.00")</h4>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="mt-4">
-        <h5>Detalles de la compra:</h5>
-        <table class="table table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio Unitario</th>
-                    <th>Cantidad</th>
-                    <th>Subtotal</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in detalles)
-                {
-                    <tr>
-                        <td>@item.IdProductoNavigation.Nombre</td>
-                        <td>$@item.PrecioUnitario</td>
-                        <td>@item.Cantidad</td>
-                        <td>$@(item.Cantidad * item.PrecioUnitario)</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <!-- Tabla de detalles con mejor estilo -->
+    <div class="card border-0 shadow-sm mb-4">
+        <div class="card-header bg-light py-3">
+            <h5 class="mb-0"><i class="fas fa-list-alt me-2 text-primary"></i> Detalles de la compra</h5>
+        </div>
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th class="ps-4">Producto</th>
+                            <th class="text-end">Precio Unitario</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-end pe-4">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in detalles)
+                        {
+                            <tr>
+                                <td class="ps-4">
+                                    <div class="d-flex align-items-center">
+                                        <div class="flex-shrink-0 me-3">
+                                            <i class="fas fa-box text-muted"></i>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            @item.IdProductoNavigation.Nombre
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-end">$@item.PrecioUnitario.ToString("N2")</td>
+                                <td class="text-center">@item.Cantidad</td>
+                                <td class="text-end pe-4 fw-semibold">$@((item.Cantidad * item.PrecioUnitario).ToString("N2"))</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
-    <div class="text-center mt-4">
-        <a asp-action="DescargarPDF" asp-route-id="@Model.IdFactura" class="btn btn-outline-dark mt-4">
-            <i class="fas fa-file-pdf"></i> Descargar PDF
+    <!-- Botones con mejor espaciado y estilo -->
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mt-5">
+        <a asp-action="DescargarPDF" asp-route-id="@Model.IdFactura" class="btn btn-lg btn-outline-primary py-2 px-4">
+            <i class="fas fa-file-pdf me-2"></i> Descargar Factura (PDF)
         </a>
+        <a href="@Url.Action("Index", "Catalogo")" class="btn btn-lg btn-outline-secondary py-2 px-4">
+            <i class="fas fa-arrow-left me-2"></i> Volver al Catálogo
+        </a>
+    </div>
 
-        <a href="@Url.Action("Index", "Catalogo")" class="btn btn-secondary ms-3">Volver al Catálogo</a>
+    <!-- Mensaje de agradecimiento -->
+    <div class="text-center mt-5 pt-3 border-top">
+        <p class="text-muted">
+            <i class="fas fa-headset me-2 text-primary"></i> ¿Tienes alguna duda?
+            <a href="#" class="text-decoration-none">Contáctanos</a>, estamos para ayudarte.
+        </p>
     </div>
 </div>
 
+<style>
+    .table-hover tbody tr:hover {
+        background-color: rgba(13, 110, 253, 0.05);
+    }
+
+    .card {
+        border-radius: 0.5rem;
+    }
+</style>

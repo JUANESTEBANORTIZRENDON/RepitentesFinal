@@ -1,53 +1,100 @@
-﻿@{
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
-
-@if (TempData["mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["mensaje"]</div>
-}
-@if (TempData["error"] != null)
-{
-    <div class="alert alert-danger">@TempData["error"]</div>
-}
-
-@model List<TiendaVirtual.Models.Categorium>
+﻿@model List<TiendaVirtual.Models.Categorium>
 @{
+    ViewData["Title"] = "Gestión de Categorías";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-    ViewData["Title"] = "Categorías";
     var categorias = ViewBag.Categorias as List<TiendaVirtual.Models.Categorium>;
 }
 
-<h2>Categorías</h2>
-
-<div class="mb-3">
-    <a asp-action="Crear" class="btn btn-primary">Nueva Categoría</a>
-</div>
-
-<div class="row">
-    @foreach (var cat in categorias)
+<div class="container-fluid py-4">
+    @if (TempData["mensaje"] != null)
     {
-        <div class="col-md-4 mb-3">
-            <div class="card shadow-sm border-primary" onclick="cargarProductos(@cat.IdCategoria)" style="cursor:pointer;">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">@cat.Nombre</h5>
-                    <a asp-action="Editar" asp-route-id="@cat.IdCategoria" class="btn btn-warning btn-sm">Editar</a>
-                    <a asp-action="Eliminar" asp-route-id="@cat.IdCategoria" class="btn btn-danger btn-sm">Eliminar</a>
-                </div>
-            </div>
+        <div class="alert alert-success alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     }
-</div>
+    @if (TempData["error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i> @TempData["error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-<hr />
-<div id="productosCategoria">
-    <h4 class="text-secondary">Haz clic en una categoría para ver sus productos.</h4>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0"><i class="fas fa-tags me-2 text-primary"></i> Categorías</h2>
+        <a asp-action="Crear" class="btn btn-primary">
+            <i class="fas fa-plus me-1"></i> Nueva Categoría
+        </a>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var cat in categorias)
+        {
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="card border-0 shadow-sm h-100 hover-shadow">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h5 class="card-title mb-0 text-primary">@cat.Nombre</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" asp-action="Editar" asp-route-id="@cat.IdCategoria">
+                                            <i class="fas fa-edit text-warning me-2"></i> Editar
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-danger" asp-action="Eliminar" asp-route-id="@cat.IdCategoria">
+                                            <i class="fas fa-trash-alt me-2"></i> Eliminar
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onclick="cargarProductos(@cat.IdCategoria)"
+                                class="btn btn-sm btn-outline-primary w-100">
+                            <i class="fas fa-eye me-1"></i> Ver Productos
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="card border-0 shadow-sm mt-5">
+        <div class="card-header bg-light">
+            <h4 class="mb-0"><i class="fas fa-boxes me-2"></i> Productos por Categoría</h4>
+        </div>
+        <div class="card-body" id="productosCategoria">
+            <div class="text-center py-4">
+                <i class="fas fa-tag fa-3x text-muted mb-3"></i>
+                <h5 class="text-muted">Selecciona una categoría para ver sus productos</h5>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
     <script>
         function cargarProductos(idCategoria) {
-            $("#productosCategoria").load(`/Categoria/ProductosPorCategoria/${idCategoria}`);
+            $("#productosCategoria").html(`
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Cargando...</span>
+                    </div>
+                    <p class="mt-2">Cargando productos...</p>
+                </div>
+            `);
+
+            $("#productosCategoria").load(`/Categoria/ProductosPorCategoria/${idCategoria}`, function() {
+                $('html, body').animate({
+                    scrollTop: $("#productosCategoria").offset().top - 20
+                }, 500);
+            });
         }
     </script>
 }

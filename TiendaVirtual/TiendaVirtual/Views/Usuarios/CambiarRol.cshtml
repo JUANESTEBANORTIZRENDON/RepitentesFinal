@@ -5,24 +5,44 @@
     var roles = ViewBag.Roles as List<TiendaVirtual.Models.Rol>;
 }
 
-<h2>Cambiar Rol</h2>
+<div class="container py-4">
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-primary text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-user-tag me-2"></i> Cambiar Rol de Usuario</h2>
+        </div>
+        <div class="card-body">
+            <div class="mb-4">
+                <h5 class="mb-1">Usuario: @Model.Nombre</h5>
+                <p class="text-muted mb-0">Correo: @Model.Correo</p>
+                <p class="text-muted">Rol actual: <span class="badge bg-secondary">@Model.IdRolNavigation?.Nombre</span></p>
+            </div>
 
-<form asp-action="CambiarRol" method="post">
-    <input type="hidden" name="id" value="@Model.IdUsuario" />
+            <form asp-action="CambiarRol" method="post" class="row g-3">
+                <input type="hidden" name="id" value="@Model.IdUsuario" />
 
-    <div class="mb-3">
-        <label for="nuevoRolId" class="form-label">Seleccione un rol</label>
-        <select class="form-select" name="nuevoRolId">
-            @foreach (var rol in roles)
-            {
-                <option value="@rol.IdRol" selected="@(rol.IdRol == Model.IdRol)">
-                    @rol.Nombre
-                </option>
-            }
-        </select>
+                <div class="col-md-12">
+                    <label for="nuevoRolId" class="form-label fw-bold">Seleccione un nuevo rol</label>
+                    <select class="form-select" name="nuevoRolId" required>
+                        @foreach (var rol in roles)
+                        {
+                            <option value="@rol.IdRol" selected="@(rol.IdRol == Model.IdRol)">
+                                @rol.Nombre
+                            </option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-12 mt-3">
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                            <i class="fas fa-times me-1"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="fas fa-save me-1"></i> Actualizar Rol
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary">Actualizar Rol</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
-
+</div>

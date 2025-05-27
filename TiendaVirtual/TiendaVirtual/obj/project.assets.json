@@ -3406,23 +3406,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\juane\\.nuget\\packages\\": {},
-    "D:\\Program Files\\Microsoft\\VisualStudio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\danit\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
+      "projectUniqueName": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
       "projectName": "TiendaVirtual",
-      "projectPath": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
-      "packagesPath": "C:\\Users\\juane\\.nuget\\packages\\",
-      "outputPath": "D:\\AlmacenGit\\TrabajoFinalPoo\\TiendaVirtual\\TiendaVirtual\\obj\\",
+      "projectPath": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
+      "packagesPath": "C:\\Users\\danit\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Program Files\\Microsoft\\VisualStudio\\Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\juane\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\danit\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3501,7 +3501,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

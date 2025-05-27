@@ -1,0 +1,153 @@
+﻿/* ----- Estilos Base ----- */
+.catalog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* ----- Filtros Mejorados ----- */
+.filter-section {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-group {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-input,
+.filter-select {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid #e0e0e0;
+    background-color: #f9f9f9;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.filter-button {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
+/* ----- Grid de Productos ----- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image-container {
+    position: relative;
+    padding-top: 100%; /* Mantiene relación 1:1 */
+    overflow: hidden;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1.5rem;
+    background: #f9f9f9;
+}
+
+.product-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    color: #2c2c2c;
+    margin: 0.5rem 0;
+    font-weight: 600;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ff6f61;
+    margin: 0.5rem 0;
+}
+
+.product-meta {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0.3rem 0;
+}
+
+.add-to-cart-btn {
+    margin-top: auto;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* ----- Efectos Hover ----- */
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-btn:hover {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}

@@ -1,57 +1,98 @@
 ﻿@model TiendaVirtual.Models.Usuario
-
 @{
     ViewData["Title"] = "Crear Usuario";
     var roles = ViewBag.Roles as List<TiendaVirtual.Models.Rol>;
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
+<div class="container py-4">
+    <div class="card border-0 shadow-sm">
+        <div class="card-header bg-primary text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-user-plus me-2"></i> Registrar Nuevo Usuario</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Crear" class="row g-3">
+                <div class="col-md-6">
+                    <label asp-for="Nombre" class="form-label fw-bold">Nombre Completo</label>
+                    <input asp-for="Nombre" class="form-control" placeholder="Ingrese el nombre completo" />
+                    <span asp-validation-for="Nombre" class="text-danger small"></span>
+                </div>
 
-<h2>Registrar Usuario</h2>
+                <div class="col-md-6">
+                    <label asp-for="Correo" class="form-label fw-bold">Correo Electrónico</label>
+                    <input asp-for="Correo" class="form-control" type="email" placeholder="ejemplo@dominio.com" />
+                    <span asp-validation-for="Correo" class="text-danger small"></span>
+                </div>
 
-<form asp-action="Crear">
-    <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input asp-for="Nombre" class="form-control" />
+                <div class="col-md-6">
+                    <label asp-for="Clave" class="form-label fw-bold">Contraseña</label>
+                    <div class="input-group">
+                        <input asp-for="Clave" class="form-control" type="password" id="password" />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Clave" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-6">
+                    <label asp-for="Telefono" class="form-label fw-bold">Teléfono</label>
+                    <input asp-for="Telefono" class="form-control" placeholder="Ingrese número telefónico" />
+                    <span asp-validation-for="Telefono" class="text-danger small"></span>
+                </div>
+
+                <div class="col-12">
+                    <label asp-for="Direccion" class="form-label fw-bold">Dirección</label>
+                    <input asp-for="Direccion" class="form-control" placeholder="Ingrese dirección completa" />
+                    <span asp-validation-for="Direccion" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="Edad" class="form-label fw-bold">Edad</label>
+                    <input asp-for="Edad" class="form-control" type="number" min="1" />
+                    <span asp-validation-for="Edad" class="text-danger small"></span>
+                </div>
+
+                <div class="col-md-8">
+                    <label asp-for="IdRol" class="form-label fw-bold">Rol del Usuario</label>
+                    <select asp-for="IdRol" class="form-select" required>
+                        <option value="">Seleccione un rol</option>
+                        @foreach (var rol in roles)
+                        {
+                            <option value="@rol.IdRol">@rol.Nombre</option>
+                        }
+                    </select>
+                    <span asp-validation-for="IdRol" class="text-danger small"></span>
+                </div>
+
+                <div class="col-12 mt-4">
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                            <i class="fas fa-times me-1"></i> Cancelar
+                        </a>
+                        <button type="submit" class="btn btn-primary px-4">
+                            <i class="fas fa-save me-1"></i> Registrar Usuario
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
+</div>
 
-    <div class="mb-3">
-        <label class="form-label">Correo</label>
-        <input asp-for="Correo" class="form-control" type="email" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Clave</label>
-        <input asp-for="Clave" class="form-control" type="password" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Teléfono</label>
-        <input asp-for="Telefono" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Dirección</label>
-        <input asp-for="Direccion" class="form-control" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Edad</label>
-        <input asp-for="Edad" class="form-control" type="number" />
-    </div>
-
-    <div class="mb-3">
-        <label class="form-label">Rol</label>
-        <select asp-for="IdRol" class="form-select">
-            <option value="">Seleccione un rol</option>
-            @foreach (var rol in roles)
-            {
-                <option value="@rol.IdRol">@rol.Nombre</option>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordInput = document.getElementById('password');
+            const icon = this.querySelector('i');
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
             }
-        </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-</form>
-
+        });
+    </script>
+}

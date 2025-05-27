@@ -33,3 +33,4 @@ function showAlert(message, type = "success") {
         setTimeout(() => alert.remove(), 500);
     }, 3000);
 }
+

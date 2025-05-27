@@ -1,94 +1,113 @@
 ﻿@model List<TiendaVirtual.Models.Producto>
 
 @{
-    ViewData["Title"] = "Catálogo de Productos";
+    ViewData["Title"] = "Catálogo Premium";
     var categorias = ViewBag.Categorias as Dictionary<int, string>;
 }
 
-<div class="text-center mb-5">
-    <h2 class="display-5 fw-bold text-primary">Nuestro Catálogo</h2>
-    <p class="lead">Explora nuestra selección de productos destacados para ti.</p>
+<!-- Hero del Catálogo -->
+<section class="catalog-hero">
+    <div class="container">
+        <h1 class="catalog-title">Nuestra Colección</h1>
+        <p class="catalog-subtitle">Descubre los secretos de belleza mejor guardados</p>
+    </div>
+</section>
+
+<!-- Filtros Mejorados -->
+<div class="container">
+    <div class="catalog-filters-container">
+        <form method="get" class="catalog-filters-form">
+            <div class="filter-group">
+                <i class="fas fa-search filter-icon"></i>
+                <input type="text" name="busqueda" class="form-control filter-input"
+                       placeholder="Buscar producto..." value="@ViewBag.Busqueda" />
+            </div>
+
+            <div class="filter-group">
+                <i class="fas fa-sort filter-icon"></i>
+                <select name="orden" class="form-select filter-select">
+                    <option value="">Ordenar por</option>
+                    <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
+                    <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
+                    <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
+                    <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
+                </select>
+            </div>
+
+            <button type="submit" class="filter-button">
+                <i class="fas fa-check-circle me-2"></i>Aplicar
+            </button>
+        </form>
+    </div>
 </div>
 
-@if (TempData["mensaje"] != null)
-{
-    <div class="alert alert-success">@TempData["mensaje"]</div>
-}
-
-<form method="get" class="row g-2 mb-4">
-    <div class="col-md-4">
-        <input type="text" name="busqueda" class="form-control" placeholder="Buscar producto..." value="@ViewBag.Busqueda" />
-    </div>
-    <div class="col-md-4">
-        <select name="orden" class="form-select">
-            <option value="">Ordenar por</option>
-            <option value="precio_asc" selected="@(ViewBag.Orden == "precio_asc")">Precio: menor a mayor</option>
-            <option value="precio_desc" selected="@(ViewBag.Orden == "precio_desc")">Precio: mayor a menor</option>
-            <option value="stock_asc" selected="@(ViewBag.Orden == "stock_asc")">Stock: menor a mayor</option>
-            <option value="stock_desc" selected="@(ViewBag.Orden == "stock_desc")">Stock: mayor a menor</option>
-        </select>
-    </div>
-    <div class="col-md-4">
-        <button type="submit" class="btn btn-primary w-100">Aplicar</button>
-    </div>
-</form>
-
-<!-- Productos -->
-<div class="row justify-content-center">
+<!-- Grid de Productos -->
+<div class="product-grid">
     @foreach (var item in Model)
     {
-        <div class="col-md-3 mb-4">
-            <div class="card h-100 shadow-sm">
-                <img src="@item.Imagen" class="card-img-top" alt="@item.Nombre" style="height: 200px; object-fit: cover;">
-                <div class="card-body d-flex flex-column">
-                    <h5 class="card-title text-primary fw-bold">@item.Nombre</h5>
-                    <p class="card-text mb-1"><strong>Categoría:</strong> @(categorias != null && categorias.ContainsKey(item.IdCategoria ?? 0) ? categorias[item.IdCategoria ?? 0] : "Sin categoría")</p>
-                    <p class="card-text mb-1"><strong>Código:</strong> @item.CodigoProducto</p>
-                    <p class="card-text mb-1"><strong>Marca:</strong> @item.Marca</p>
-                    <p class="card-text mb-1"><strong>Precio:</strong> $@item.PrecioUnitario</p>
-                    <p class="card-text mb-3"><strong>Stock:</strong> @item.Stock</p>
+        <div class="product-card">
+            <div class="product-image-container">
+                <img src="@item.Imagen" class="product-image" alt="@item.Nombre">
+            </div>
 
-                    <div class="mt-auto">
-                        <button class="btn btn-outline-primary w-100 mb-2"
-                                data-bs-toggle="modal"
-                                data-bs-target="#productoModal"
-                                data-id="@item.IdProducto"
-                                data-nombre="@item.Nombre"
-                                data-precio="@item.PrecioUnitario"
-                                data-stock="@item.Stock"
-                                data-imagen="@item.Imagen">
-                            Agregar al carrito
-                        </button>
-                    </div>
-                </div>
+            <div class="product-details">
+                <h3 class="product-name">@item.Nombre</h3>
+                <p class="product-meta"><strong>Ref:</strong> @item.CodigoProducto</p>
+                <p class="product-meta"><strong>Disponibles:</strong> @item.Stock</p>
+                <p class="product-price">$@item.PrecioUnitario</p>
+
+                <button class="add-to-cart-btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#productoModal"
+                        data-id="@item.IdProducto">
+                    <i class="fas fa-shopping-bag"></i> Añadir
+                </button>
             </div>
         </div>
     }
 </div>
 
-<!-- Modal para añadir al carrito -->
-<div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
+<!-- Modal Premium -->
+<div class="modal fade" id="productoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 shadow">
-            <div class="modal-header bg-light">
+        <div class="modal-content">
+            <div class="modal-header">
                 <h5 class="modal-title" id="productoModalLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="post" asp-controller="Carrito" asp-action="Agregar">
-                <div class="modal-body row align-items-center">
-                    <div class="col-md-6 text-center mb-3">
-                        <img id="modalProductoImagen" src="" class="img-fluid rounded shadow-sm" alt="Producto" />
-                    </div>
-                    <div class="col-md-6">
-                        <input type="hidden" name="IdProducto" id="modalIdProducto" />
-                        <p><strong>Nombre:</strong> <span id="modalProductoNombre"></span></p>
-                        <p><strong>Precio:</strong> $<span id="modalProductoPrecio"></span></p>
-                        <p><strong>Stock disponible:</strong> <span id="modalProductoStock"></span></p>
-                        <div class="mb-3">
-                            <label for="Cantidad" class="form-label">Cantidad</label>
-                            <input type="number" class="form-control" name="Cantidad" id="modalCantidad" value="1" min="1" />
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="modal-image-container">
+                                <img id="modalProductoImagen" src="" class="img-fluid" alt="Producto">
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-success w-100">Añadir al carrito</button>
+                        <div class="col-md-6">
+                            <input type="hidden" name="IdProducto" id="modalIdProducto" />
+                            <div class="modal-product-info">
+                                <span class="modal-product-brand" id="modalProductoMarca"></span>
+                                <h3 id="modalProductoNombre"></h3>
+                                <div class="price-container">
+                                    <span class="current-price">$<span id="modalProductoPrecio"></span></span>
+                                </div>
+                                <div class="stock-info">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span id="modalProductoStock"></span> disponibles
+                                </div>
+                                <div class="quantity-selector">
+                                    <label>Cantidad:</label>
+                                    <div class="quantity-input">
+                                        <button type="button" class="quantity-btn minus">-</button>
+                                        <input type="number" name="Cantidad" id="modalCantidad" value="1" min="1" max="10">
+                                        <button type="button" class="quantity-btn plus">+</button>
+                                    </div>
+                                </div>
+                                <button type="submit" class="add-to-cart-modal">
+                                    <i class="fas fa-shopping-bag me-2"></i>Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -96,35 +115,35 @@
     </div>
 </div>
 
-<!-- Paginación -->
-<nav aria-label="Paginación del catálogo">
-    <ul class="pagination justify-content-center">
-        @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
-        {
-            <li class="page-item @(i == ViewBag.PaginaActual ? "active" : "")">
-                <a class="page-link"
-                   href="@Url.Action("Index", new { pagina = i, busqueda = ViewBag.Busqueda, orden = ViewBag.Orden })">
-                    @i
-                </a>
-            </li>
-        }
-    </ul>
-</nav>
-
-<!-- Script Modal -->
+<!-- Script mejorado -->
 <script>
-    const productoModal = document.getElementById('productoModal');
-    productoModal.addEventListener('show.bs.modal', function (event) {
-        const button = event.relatedTarget;
-        document.getElementById('modalProductoNombre').textContent = button.getAttribute('data-nombre');
-        document.getElementById('modalProductoPrecio').textContent = button.getAttribute('data-precio');
-        document.getElementById('modalProductoStock').textContent = button.getAttribute('data-stock');
-        document.getElementById('modalProductoImagen').src = button.getAttribute('data-imagen');
-        document.getElementById('modalIdProducto').value = button.getAttribute('data-id');
-        document.getElementById('modalCantidad').max = button.getAttribute('data-stock');
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('productoModal');
+        modal.addEventListener('show.bs.modal', function(event) {
+            const button = event.relatedTarget;
+            document.getElementById('modalProductoNombre').textContent = button.getAttribute('data-nombre');
+            document.getElementById('modalProductoPrecio').textContent = button.getAttribute('data-precio');
+            document.getElementById('modalProductoStock').textContent = button.getAttribute('data-stock');
+            document.getElementById('modalProductoImagen').src = button.getAttribute('data-imagen');
+            document.getElementById('modalIdProducto').value = button.getAttribute('data-id');
+
+            // Actualizar máximo según stock
+            const stock = parseInt(button.getAttribute('data-stock'));
+            document.getElementById('modalCantidad').max = stock > 10 ? 10 : stock;
+        });
+
+        // Contador de cantidad
+        document.querySelectorAll('.quantity-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                let value = parseInt(input.value);
+
+                if (this.classList.contains('minus') && value > 1) {
+                    input.value = value - 1;
+                } else if (this.classList.contains('plus') && value < parseInt(input.max)) {
+                    input.value = value + 1;
+                }
+            });
+        });
     });
 </script>
-
-
-
-

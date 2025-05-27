@@ -2,23 +2,81 @@
     ViewData["Title"] = "Conócenos";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="about-container">
+    <section class="about-hero">
+        <h1>@ViewData["Title"]</h1>
+        <p>Tu destino premium para cosméticos y cuidado personal</p>
+    </section>
 
-<p>
-    En esta plataforma buscamos ofrecer una solución adaptable para la gestión de tiendas virtuales que manejan diferentes tipos de productos.
-    Nuestro sistema está diseñado para atender tanto al cliente como al administrador de forma eficiente.
-</p>
+    <div class="about-content">
+        <div class="mission-vision">
+            <div class="card mv-card">
+                <i class="fas fa-spa icon-feature"></i>
+                <h3>Misión</h3>
+                <p>Ofrecer productos cosméticos de alta calidad que empoderen tu belleza natural, con ingredientes seguros y resultados visibles.</p>
+            </div>
 
-<p>
-    El sistema permite a los usuarios registrarse, iniciar sesión, recuperar su contraseña y gestionar sus compras mediante carritos personalizados.
-    Los administradores pueden gestionar productos, controlar el stock, revisar el historial de compras y generar facturas detalladas.
-</p>
+            <div class="card mv-card">
+                <i class="fas fa-globe-americas icon-feature"></i>
+                <h3>Visión</h3>
+                <p>Ser la marca de cosméticos más confiable de Latinoamérica, innovando en fórmulas limpias y experiencias de compra personalizadas.</p>
+            </div>
+        </div>
 
-<p>
-    La estructura de la base de datos permite manejar roles diferenciados (cliente y administrador), así como relacionar productos con carritos, ventas y detalles de factura.
-    Esto garantiza un control completo del proceso de venta, desde la visualización del producto hasta la generación de una factura final.
-</p>
+        <section class="features-section">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Ingredientes Naturales</h3>
+                    <p>Productos formulados con 90%+ ingredientes de origen natural y libres de crueldad animal.</p>
+                </div>
 
-<p>
-    En resumen, esta plataforma es ideal para tiendas que deseen escalar digitalmente, gestionar catálogos diversos y brindar una experiencia segura y eficiente tanto para el comprador como para el equipo administrativo.
-</p>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Innovación Científica</h3>
+                    <p>Tecnología dermocosmética avalada por dermatólogos para resultados comprobados.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Lujo Accesible</h3>
+                    <p>Calidad premium a precios justos, con programas de fidelización exclusivos.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="team-section">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="/images/breiner.jpg" alt="Breiner Eduardo Luis" class="team-img">
+                    </div>
+                    <h3>Breiner Eduardo Luis</h3>
+                    <p class="team-role">Fundador & CEO</p>
+                    <p>Químico cosmético con 8 años de experiencia en desarrollo de productos. Especializado en formulaciones veganas y sostenibles.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="/images/juan.jpg" alt="Juan Esteban Ortiz" class="team-img">
+                    </div>
+                    <h3>Juan Esteban Ortiz</h3>
+                    <p class="team-role">CTO</p>
+                    <p>Experto en e-commerce y sistemas de inventario. Diseñó nuestra plataforma de gestión inteligente de pedidos.</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="/images/danilo.jpg" alt="Danilo Tangarife Bustamante" class="team-img">
+                    </div>
+                    <h3>Danilo Tangarife B.</h3>
+                    <p class="team-role">Director de Marketing</p>
+                    <p>Estratega digital con enfoque en belleza consciente. Creador de nuestra comunidad "Beauty Circle".</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

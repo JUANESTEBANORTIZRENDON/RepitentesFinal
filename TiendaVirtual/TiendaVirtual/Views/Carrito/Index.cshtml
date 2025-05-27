@@ -1,7 +1,8 @@
 @if (TempData["error"] != null)
 {
-    <div class="alert alert-danger">
-        @TempData["error"]
+    <div class="alert alert-danger alert-dismissible fade show shadow-sm" role="alert">
+        <i class="fas fa-exclamation-circle me-2"></i> @TempData["error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 }
 
@@ -13,77 +14,130 @@
     decimal total = ViewBag.Total != null ? (decimal)ViewBag.Total : 0;
 }
 
-<h2 class="mb-4">Tu Carrito</h2>
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0"><i class="fas fa-shopping-cart me-2 text-primary"></i> Tu Carrito</h2>
+        <a href="@Url.Action("Index", "Catalogo")" class="btn btn-outline-primary">
+            <i class="fas fa-arrow-left me-1"></i> Seguir Comprando
+        </a>
+    </div>
 
-@if (!Model.Any())
-{
-    <div class="alert alert-info">Tu carrito está vacío.</div>
-}
-else
-{
-    <!-- Formulario para actualizar cantidades -->
-    <form asp-action="ActualizarCantidad" method="post">
-        <table class="table table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th>Producto</th>
-                    <th>Precio Unitario</th>
-                    <th>Cantidad</th>
-                    <th>Subtotal</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < Model.Count; i++)
-                {
-                    var item = Model[i];
-                    <tr>
-                        <td>@item.IdProductoNavigation.Nombre</td>
-                        <td>$@item.PrecioUnitario</td>
-                        <td>
-                            <input type="hidden" name="productos[@i].IdProducto" value="@item.IdProducto" />
-                            <input type="number" name="productos[@i].Cantidad" value="@item.Cantidad" class="form-control" min="1" />
-                        </td>
-                        <td>$@(item.Cantidad * item.PrecioUnitario)</td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto(@item.IdProducto)">Eliminar</button>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    @if (!Model.Any())
+    {
+        <div class="card border-0 shadow-sm text-center py-5">
+            <div class="card-body">
+                <i class="fas fa-shopping-cart fa-4x text-muted mb-4 opacity-25"></i>
+                <h3 class="text-muted">Tu carrito está vacío</h3>
+                <p class="text-muted mb-4">Agrega productos para comenzar tu compra</p>
+                <a href="@Url.Action("Index", "Catalogo")" class="btn btn-primary px-4">
+                    <i class="fas fa-store me-1"></i> Ir al Catálogo
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <!-- Formulario para actualizar cantidades -->
+        <form asp-action="ActualizarCantidad" method="post">
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="ps-4">Producto</th>
+                                    <th class="text-end">Precio Unitario</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Subtotal</th>
+                                    <th class="text-end pe-4">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.Count; i++)
+                                {
+                                    var item = Model[i];
+                                    <tr>
+                                        <td class="ps-4">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <i class="fas fa-box text-muted"></i>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    @item.IdProductoNavigation.Nombre
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-end">$@item.PrecioUnitario.ToString("N2")</td>
+                                        <td class="text-center">
+                                            <input type="hidden" name="productos[@i].IdProducto" value="@item.IdProducto" />
+                                            <input type="number" name="productos[@i].Cantidad" value="@item.Cantidad"
+                                                   class="form-control form-control-sm" style="width: 80px; margin: 0 auto;" min="1" />
+                                        </td>
+                                        <td class="text-end fw-semibold">$@((item.Cantidad * item.PrecioUnitario).ToString("N2"))</td>
+                                        <td class="text-end pe-4">
+                                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarProducto(@item.IdProducto)">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
 
-        <div class="mb-3 d-flex justify-content-between">
-            <strong>Total a pagar:</strong>
-            <h4 class="text-success">$@total</h4>
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <button type="submit" class="btn btn-warning px-4">
+                                <i class="fas fa-sync-alt me-1"></i> Actualizar Cantidades
+                            </button>
+                        </div>
+                        <div class="text-end">
+                            <h5 class="mb-1 text-muted">Total a pagar:</h5>
+                            <h3 class="text-success mb-0">$@total.ToString("N2")</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <!-- Formulario para Comprar -->
+        <div class="d-grid">
+            <form asp-action="Comprar" method="post">
+                <button type="submit" class="btn btn-success btn-lg w-100 py-3">
+                    <i class="fas fa-credit-card me-2"></i> Comprar y Generar Factura
+                </button>
+            </form>
         </div>
 
-        <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-warning">Actualizar cantidades</button>
-        </div>
-    </form>
-
-    <!-- Formulario separado para Comprar -->
-    <form asp-action="Comprar" method="post" class="mt-3">
-        <button type="submit" class="btn btn-success">Comprar y Generar Factura</button>
-    </form>
-    
-    <!-- Formulario oculto para eliminar productos -->
-    <form id="eliminarForm" asp-action="Eliminar" method="post" style="display:none;">
-        <input type="hidden" id="idProductoEliminar" name="idProducto" value="" />
-    </form>
-}
+        <!-- Formulario oculto para eliminar productos -->
+        <form id="eliminarForm" asp-action="Eliminar" method="post" style="display:none;">
+            <input type="hidden" id="idProductoEliminar" name="idProducto" value="" />
+        </form>
+    }
+</div>
 
 @section Scripts {
     <script>
         function eliminarProducto(idProducto) {
-            if (confirm('¿Estás seguro de que deseas eliminar este producto del carrito?')) {
-                document.getElementById('idProductoEliminar').value = idProducto;
-                document.getElementById('eliminarForm').submit();
-            }
+            Swal.fire({
+                title: '¿Eliminar producto?',
+                text: "¿Estás seguro de que deseas eliminar este producto del carrito?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('idProductoEliminar').value = idProducto;
+                    document.getElementById('eliminarForm').submit();
+                }
+            })
         }
     </script>
 }
-
-
-

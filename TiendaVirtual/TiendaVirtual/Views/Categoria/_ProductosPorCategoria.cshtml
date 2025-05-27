@@ -1,38 +1,67 @@
 ﻿@model List<TiendaVirtual.Models.Producto>
 
-<h4>Productos en la categoría: @ViewBag.CategoriaSeleccionada</h4>
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="mb-0">
+            <i class="fas fa-tag me-2 text-primary"></i>
+            Productos en: <span class="text-primary">@ViewBag.CategoriaSeleccionada</span>
+        </h3>
+        <a href="#" onclick="history.back()" class="btn btn-outline-secondary">
+            <i class="fas fa-arrow-left me-1"></i> Volver
+        </a>
+    </div>
 
-@if (!Model.Any())
-{
-    <p>No hay productos en esta categoría.</p>
-}
-else
-{
-    <div class="row">
-        @foreach (var prod in Model)
-        {
-            <div class="col-md-4 mb-3">
-                <div class="card h-100 shadow-sm border-success">
-                    @if (!string.IsNullOrEmpty(prod.Imagen))
-                    {
-                        <img src="@prod.Imagen" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Imagen del producto">
-                    }
-                    else
-                    {
-                        <img src="https://via.placeholder.com/400x200?text=Sin+Imagen" class="card-img-top img-fluid" alt="Sin imagen">
-                    }
-                    <div class="card-body">
-                        <h5 class="card-title">@prod.Nombre</h5>
-                        <p class="card-text">
-                            <strong>Marca:</strong> @prod.Marca <br />
-                            <strong>Precio:</strong> $@prod.PrecioUnitario <br />
-                            <strong>Stock:</strong> @prod.Stock
-                        </p>
+    @if (!Model.Any())
+    {
+        <div class="card border-0 shadow-sm text-center py-5">
+            <div class="card-body">
+                <i class="fas fa-box-open fa-4x text-muted mb-3 opacity-25"></i>
+                <h4 class="text-muted">No hay productos en esta categoría</h4>
+                <p class="text-muted mb-0">Agrega productos para verlos listados aquí</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var prod in Model)
+            {
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card h-100 border-0 shadow-sm hover-shadow">
+                        <div class="position-relative">
+                            @if (!string.IsNullOrEmpty(prod.Imagen))
+                            {
+                                <img src="@prod.Imagen" class="card-img-top img-fluid" style="height: 180px; object-fit: cover;" alt="Imagen del producto">
+                            }
+                            else
+                            {
+                                <div class="card-img-top d-flex align-items-center justify-content-center bg-light" style="height: 180px;">
+                                    <i class="fas fa-image fa-3x text-muted"></i>
+                                </div>
+                            }
+                            <div class="position-absolute top-0 end-0 m-2">
+                                <span class="badge bg-@(prod.Stock > 0 ? "success" : "danger")">
+                                    @(prod.Stock > 0 ? "Disponible" : "Agotado")
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">@prod.Nombre</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="text-muted small">@prod.Marca</span>
+                                <span class="fw-bold text-success">$@prod.PrecioUnitario.ToString("N2")</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="small">Stock: @prod.Stock</span>
+                                <a asp-controller="AdminProducto" asp-action="Editar" asp-route-id="@prod.IdProducto"
+                                   class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-}
-
-
+            }
+        </div>
+    }
+</div>

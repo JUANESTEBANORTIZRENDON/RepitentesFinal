@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\poofinal\\tiendavirtual\\tiendavirtual\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\controllers\\cuentacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\poofinal\\tiendavirtual\\tiendavirtual\\controllers\\adminproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|solutionrelative:tiendavirtual\\controllers\\adminproductocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F27DA9AF-248B-4F37-93BA-EB6737E1928B}|TiendaVirtual\\TiendaVirtual.csproj|d:\\almacengit\\poofinal\\tiendavirtual\\tiendavirtual\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -31,8 +31,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T21:50:30.258Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -45,14 +44,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CuentaController.cs",
-              "DocumentMoniker": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\Controllers\\CuentaController.cs",
-              "RelativeDocumentMoniker": "TiendaVirtual\\Controllers\\CuentaController.cs",
-              "ToolTip": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\Controllers\\CuentaController.cs",
-              "RelativeToolTip": "TiendaVirtual\\Controllers\\CuentaController.cs",
-              "ViewState": "AgIAAA8AAAAA/P////8PwBoAAAASAAAAAAAAAA==",
+              "Title": "AdminProductoController.cs",
+              "DocumentMoniker": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\Controllers\\AdminProductoController.cs",
+              "RelativeDocumentMoniker": "TiendaVirtual\\Controllers\\AdminProductoController.cs",
+              "ToolTip": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\Controllers\\AdminProductoController.cs",
+              "RelativeToolTip": "TiendaVirtual\\Controllers\\AdminProductoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-28T06:22:41.074Z",
+              "WhenOpened": "2025-05-28T13:41:03.993Z",
               "EditorCaption": ""
             }
           ]

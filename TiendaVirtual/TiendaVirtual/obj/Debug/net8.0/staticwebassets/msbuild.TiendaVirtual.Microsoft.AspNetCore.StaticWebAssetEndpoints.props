@@ -324,6 +324,42 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"41327"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022Sd64xI6MKWmneYhWTZWjFa93lpj0TZOvAgdEyMtNKNo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 02:40:00 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_32.3e8tz1l5zu.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_32.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3e8tz1l5zu"},{"Name":"integrity","Value":"sha256-RfnQrLjcWnXVQUUCuUKVKz5uyIYBnAHsMQThF69WGsA="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_32.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"41802"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022RfnQrLjcWnXVQUUCuUKVKz5uyIYBnAHsMQThF69WGsA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 06:52:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_32.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_32.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-RfnQrLjcWnXVQUUCuUKVKz5uyIYBnAHsMQThF69WGsA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"41802"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022RfnQrLjcWnXVQUUCuUKVKz5uyIYBnAHsMQThF69WGsA=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 06:52:57 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_33.jjyawvtfb4.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_33.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"jjyawvtfb4"},{"Name":"integrity","Value":"sha256-X1kLxvCIvN5qrZ/cucPJ6Y1eErFlD9Pu7g44uS6kb30="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_33.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"42343"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022X1kLxvCIvN5qrZ/cucPJ6Y1eErFlD9Pu7g44uS6kb30=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 06:53:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_33.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_33.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-X1kLxvCIvN5qrZ/cucPJ6Y1eErFlD9Pu7g44uS6kb30="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"42343"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022X1kLxvCIvN5qrZ/cucPJ6Y1eErFlD9Pu7g44uS6kb30=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 06:53:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_35.9svrwky3lu.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_35.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9svrwky3lu"},{"Name":"integrity","Value":"sha256-qamUTWciqrQ520YKQi95bs8y4v3V0Cri5ApAOd7PPVs="},{"Name":"label","Value":"_content/TiendaVirtual/facturas/factura_35.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"42137"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022qamUTWciqrQ520YKQi95bs8y4v3V0Cri5ApAOd7PPVs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 13:08:09 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_35.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_35.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qamUTWciqrQ520YKQi95bs8y4v3V0Cri5ApAOd7PPVs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"42137"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022qamUTWciqrQ520YKQi95bs8y4v3V0Cri5ApAOd7PPVs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 28 May 2025 13:08:09 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/TiendaVirtual/facturas/factura_4.066otmg88k.pdf">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_4.pdf'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

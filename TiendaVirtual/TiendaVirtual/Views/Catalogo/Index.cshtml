@@ -98,6 +98,56 @@
     }
 </div>
 
+<!-- Paginación -->
+<div class="container mt-4 mb-5">
+    <div class="row">
+        <div class="col-md-6">
+            <!-- Contador de resultados -->
+            <p class="text-muted">
+                @if (ViewBag.TotalPaginas > 0)
+                {
+                    <span>Mostrando @(((ViewBag.PaginaActual - 1) * 8) + 1) - @(Math.Min((ViewBag.PaginaActual * 8), ViewBag.TotalPaginas * 8)) de @(ViewBag.TotalPaginas * 8) productos</span>
+                }
+                else
+                {
+                    <span>No se encontraron productos</span>
+                }
+            </p>
+        </div>
+        <div class="col-md-6">
+            <!-- Controles de paginación -->
+            @if (ViewBag.TotalPaginas > 1)
+            {
+                <nav aria-label="Paginación de catálogo">
+                    <ul class="pagination justify-content-end">
+                        <!-- Botón Anterior -->
+                        <li class="page-item @(ViewBag.PaginaActual == 1 ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { busqueda = ViewBag.Busqueda, orden = ViewBag.Orden, pagina = ViewBag.PaginaActual - 1 })">
+                                <i class="fas fa-chevron-left"></i>
+                            </a>
+                        </li>
+                        
+                        <!-- Números de página -->
+                        @for (int i = 1; i <= ViewBag.TotalPaginas; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.PaginaActual ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { busqueda = ViewBag.Busqueda, orden = ViewBag.Orden, pagina = i })">@i</a>
+                            </li>
+                        }
+                        
+                        <!-- Botón Siguiente -->
+                        <li class="page-item @(ViewBag.PaginaActual == ViewBag.TotalPaginas ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new { busqueda = ViewBag.Busqueda, orden = ViewBag.Orden, pagina = ViewBag.PaginaActual + 1 })">
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+</div>
+
 <!-- Modal Premium -->
 <div class="modal fade" id="productoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">

@@ -246,22 +246,24 @@ namespace TiendaVirtual.Controllers
 
         public async Task<IActionResult> DescargarPDF(int id)
         {
-            var factura = await _context.Facturas.FindAsync(id);
-
-            if (factura == null || string.IsNullOrEmpty(factura.RutaPdf))
+            try
             {
-                return NotFound("Factura no encontrada o sin PDF.");
+                // Usar el nuevo método de DBFactura que obtiene el PDF desde memoria o disco
+                var dbFactura = new DBFactura(_context, _env);
+                var pdfBytes = await dbFactura.ObtenerPdfFacturaAsync(id);
+                
+                return File(pdfBytes, "application/pdf", $"factura_{id}.pdf");
             }
-
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", factura.RutaPdf);
-
-            if (!System.IO.File.Exists(path))
+            catch (FileNotFoundException)
             {
-                return NotFound("Archivo PDF no encontrado.");
+                return NotFound("Factura no encontrada o sin PDF disponible.");
             }
-
-            var pdfBytes = await System.IO.File.ReadAllBytesAsync(path);
-            return File(pdfBytes, "application/pdf", $"factura_{factura.IdFactura}.pdf");
+            catch (Exception ex)
+            {
+                // Registrar el error para depuración
+                Console.WriteLine($"Error al descargar PDF: {ex.Message}");
+                return StatusCode(500, "Error al generar o descargar el PDF.");
+            }
         }
 
     }

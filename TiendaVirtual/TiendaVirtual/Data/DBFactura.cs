@@ -1,4 +1,4 @@
-﻿using TiendaVirtual.Models;
+using TiendaVirtual.Models;
 using Microsoft.EntityFrameworkCore;
 using PdfSharpCore.Pdf;
 //using HtmlRendererCore.PdfSharpCore;
@@ -12,6 +12,8 @@ namespace TiendaVirtual.Data
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment _env;
+        // Diccionario en memoria para almacenar PDFs temporalmente (solo para la sesión actual)
+        private static Dictionary<int, byte[]> _pdfCache = new Dictionary<int, byte[]>();
 
         public DBFactura(ApplicationDbContext context, IWebHostEnvironment env)
         {
@@ -86,14 +88,45 @@ namespace TiendaVirtual.Data
 
             // ✅ Generar PDF
             string html = GenerarHtmlFactura(factura.IdFactura);
-            string rutaRelativa = $"facturas/factura_{factura.IdFactura}.pdf";
-            string rutaAbsoluta = Path.Combine(_env.WebRootPath, rutaRelativa);
-            Directory.CreateDirectory(Path.GetDirectoryName(rutaAbsoluta)!);
 
-            var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
-            pdf.Save(rutaAbsoluta);
+            try
+            {
+                // Intentar guardar en el sistema de archivos (para desarrollo local)
+                string rutaRelativa = $"facturas/factura_{factura.IdFactura}.pdf";
 
-            factura.RutaPdf = rutaRelativa;
+                // Generar el PDF en memoria primero
+                var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+
+                // Guardar en caché de memoria
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pdf.Save(ms);
+                    _pdfCache[factura.IdFactura] = ms.ToArray();
+                }
+
+                try
+                {
+                    // Intentar guardar en disco (funcionará en desarrollo, puede fallar en producción)
+                    string rutaAbsoluta = Path.Combine(_env.WebRootPath, rutaRelativa);
+                    Directory.CreateDirectory(Path.GetDirectoryName(rutaAbsoluta)!);
+                    pdf.Save(rutaAbsoluta);
+                    factura.RutaPdf = rutaRelativa;
+                }
+                catch (Exception ex)
+                {
+                    // Si falla al guardar en disco, usar un identificador especial 
+                    // para indicar que está en memoria
+                    factura.RutaPdf = $"memory:{factura.IdFactura}";
+                    Console.WriteLine($"Error al guardar PDF en disco: {ex.Message}");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Si hay algún error general con la generación del PDF
+                Console.WriteLine($"Error al generar PDF: {ex.Message}");
+                factura.RutaPdf = null;
+            }
+
             await _context.SaveChangesAsync();
 
             return factura;
@@ -124,6 +157,90 @@ namespace TiendaVirtual.Data
             sb.AppendLine($"<h3>Total: ${factura.Total}</h3>");
             return sb.ToString();
         }
+
+
+        /// <summary>
+        /// Obtiene un PDF de factura como array de bytes, intentando primero obtenerlo de memoria
+        /// y luego del sistema de archivos si está disponible
+        /// </summary>
+        public async Task<byte[]> ObtenerPdfFacturaAsync(int idFactura)
+        {
+            // Buscar primero en la caché de memoria
+            if (_pdfCache.ContainsKey(idFactura))
+            {
+                return _pdfCache[idFactura];
+            }
+
+            // Si no está en memoria, buscar en la base de datos
+            var factura = await _context.Facturas.FindAsync(idFactura);
+            if (factura == null || string.IsNullOrEmpty(factura.RutaPdf))
+            {
+                throw new FileNotFoundException("Factura no encontrada o sin PDF asociado");
+            }
+
+            // Si el PDF está en la memoria (identificado por el prefijo)
+            if (factura.RutaPdf.StartsWith("memory:"))
+            {
+                // Regenerar el PDF si no está en caché
+                string html = GenerarHtmlFactura(factura.IdFactura);
+                var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pdf.Save(ms);
+                    byte[] pdfBytes = ms.ToArray();
+                    // Almacenar en caché para futuros usos
+                    _pdfCache[idFactura] = pdfBytes;
+                    return pdfBytes;
+                }
+            }
+
+            // Si llegamos aquí, el PDF debería estar en el sistema de archivos
+            try
+            {
+                string rutaAbsoluta = Path.Combine(_env.WebRootPath, factura.RutaPdf);
+                if (System.IO.File.Exists(rutaAbsoluta))
+                {
+                    byte[] pdfBytes = await System.IO.File.ReadAllBytesAsync(rutaAbsoluta);
+                    // Almacenar en caché para futuros usos
+                    _pdfCache[idFactura] = pdfBytes;
+                    return pdfBytes;
+                }
+                else
+                {
+                    // Si el archivo no existe, regenerar el PDF
+                    string html = GenerarHtmlFactura(factura.IdFactura);
+                    var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        pdf.Save(ms);
+                        byte[] pdfBytes = ms.ToArray();
+                        _pdfCache[idFactura] = pdfBytes;
+                        return pdfBytes;
+                    }
+                }
+            }
+            catch
+            {
+                // Si falla al leer del disco, regenerar el PDF
+                string html = GenerarHtmlFactura(factura.IdFactura);
+                var pdf = PdfGenerator.GeneratePdf(html, PdfSharpCore.PageSize.A4);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    pdf.Save(ms);
+                    byte[] pdfBytes = ms.ToArray();
+                    _pdfCache[idFactura] = pdfBytes;
+                    return pdfBytes;
+                }
+            }
+        }
     }
 }
+
+
+    
+        
+
 

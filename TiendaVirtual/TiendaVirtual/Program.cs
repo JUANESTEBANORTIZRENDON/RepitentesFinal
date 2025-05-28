@@ -13,7 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Obtener la cadena de conexión de las variables de entorno o del archivo de configuración
+var connectionString = Environment.GetEnvironmentVariable("DATABASE_URL") ?? 
+    builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 // Configuración de ServidorSettings para obtener la IP y Puerto desde appsettings.json

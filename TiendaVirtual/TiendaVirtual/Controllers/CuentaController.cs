@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
@@ -15,12 +15,10 @@ namespace TiendaVirtual.Controllers
     public class CuentaController : Controller
     {
         private readonly DBUsuario _dbUsuario;
-        private readonly ServidorSettings _servidorSettings;
 
-        public CuentaController(DBUsuario dbUsuario, IOptions<ServidorSettings> servidorSettings)
+        public CuentaController(DBUsuario dbUsuario)
         {
             _dbUsuario = dbUsuario;
-            _servidorSettings = servidorSettings.Value;
         }
 
         // Registro de nuevo usuario
@@ -39,8 +37,9 @@ namespace TiendaVirtual.Controllers
             }
 
             await _dbUsuario.RegistrarUsuarioAsync(usuario);
-            // Construcción de la URL de confirmación usando la IP y puerto del appsettings.json
-            string urlConfirmacion = $"http://{_servidorSettings.IpLocal}:{_servidorSettings.Puerto}/Cuenta/Confirmar?token={usuario.TokenConfirmacion}";
+            // Construcción de la URL de confirmación usando la URL base de la solicitud actual
+            string baseUrl = GetBaseUrl();
+            string urlConfirmacion = $"{baseUrl}/Cuenta/Confirmar?token={usuario.TokenConfirmacion}";
             await EnviarCorreo(usuario.Correo, usuario.Nombre, "Confirma tu cuenta", urlConfirmacion, "ConfirmacionCuenta.html");
 
 
@@ -137,8 +136,9 @@ namespace TiendaVirtual.Controllers
                 // Aquí puedes volver a consultar el usuario solo para obtener los datos que necesitas
                 var usuario = await _dbUsuario.ObtenerUsuarioPorCorreoAsync(correo);
 
-                // Construcción de la URL de recuperación usando la IP y puerto del appsettings.json
-                string urlReset = $"http://{_servidorSettings.IpLocal}:{_servidorSettings.Puerto}/Cuenta/Restablecer?token={usuario.TokenRecuperacion}";
+                // Construcción de la URL de recuperación usando la URL base de la solicitud actual
+                string baseUrl = GetBaseUrl();
+                string urlReset = $"{baseUrl}/Cuenta/Restablecer?token={usuario.TokenRecuperacion}";
                 await EnviarCorreo(usuario.Correo, usuario.Nombre, "Restablecer contraseña", urlReset, "RecuperacionPassword.html");
 
             }
@@ -230,6 +230,15 @@ namespace TiendaVirtual.Controllers
             await cliente.SendAsync(mensaje);
             await cliente.DisconnectAsync(true);
         }
+
+        // Método para obtener la URL base de la aplicación en producción
+        private string GetBaseUrl()
+        {
+            // Usar directamente la URL de producción
+            return "https://repitentesfinal.onrender.com";
+        }
     }
+
+   
 }
 

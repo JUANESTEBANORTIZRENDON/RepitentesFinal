@@ -69,9 +69,9 @@ namespace TiendaVirtual.Controllers
             if (ModelState.IsValid)
             {
                 // Validar si el producto ya existe antes de insertar
-                if (await _dbProducto.ProductoExisteAsync(producto.CodigoProducto ?? "", producto.Nombre ?? "", producto.Marca ?? ""))
+                if (await _dbProducto.ProductoExisteAsync(producto.CodigoProducto ?? "", producto.Nombre ?? ""))
                 {
-                    ModelState.AddModelError("", "Ya existe un producto con el mismo código, nombre o marca.");
+                    ModelState.AddModelError("", "Ya existe un producto con el mismo código o nombre.");
                     return View(producto);
                 }
 

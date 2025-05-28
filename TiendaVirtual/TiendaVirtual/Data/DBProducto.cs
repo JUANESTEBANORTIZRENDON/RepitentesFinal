@@ -264,14 +264,13 @@ namespace TiendaVirtual.Data
         /// <summary>
         /// Verifica si ya existe un producto con el mismo código, nombre o marca
         /// </summary>
-        public async Task<bool> ProductoExisteAsync(string codigo, string nombre, string marca, int? idExcluir = null)
+        public async Task<bool> ProductoExisteAsync(string codigo, string nombre, int? idExcluir = null)
         {
             var query = _context.Productos.AsQueryable();
             
             query = query.Where(p => 
                 p.CodigoProducto == codigo || 
-                p.Nombre == nombre || 
-                p.Marca == marca);
+                p.Nombre == nombre);
                 
             if (idExcluir.HasValue)
             {

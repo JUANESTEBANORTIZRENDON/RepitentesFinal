@@ -226,7 +226,7 @@ namespace TiendaVirtual.Controllers
 
             using var cliente = new SmtpClient();
             await cliente.ConnectAsync("smtp.gmail.com", 587, MailKit.Security.SecureSocketOptions.StartTls);
-            await cliente.AuthenticateAsync("cazawikis42@gmail.com", "mjie jgoz gbal mtmi");
+            await cliente.AuthenticateAsync("juanestebanortizrendon24072004@gmail.com", "yodz pcus olay bmsz");
             await cliente.SendAsync(mensaje);
             await cliente.DisconnectAsync(true);
         }

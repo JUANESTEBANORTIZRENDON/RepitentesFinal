@@ -192,8 +192,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2ae2h44xli</Fingerprint>
-      <Integrity>ynUPKRvPCZpwQQu925JA4dLBlO0sXlhEk3izx6Iy/p0=</Integrity>
+      <Fingerprint>vgko9z4iuy</Fingerprint>
+      <Integrity>n1Kvw/1d59t23Vhh8fSA8uMZXaX8GCMVnS3v/pGAr6k=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\products.css'))</OriginalItemSpec>
@@ -414,6 +414,60 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_25.pdf'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_26.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TiendaVirtual</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TiendaVirtual</BasePath>
+      <RelativePath>facturas/factura_26.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>vnsax26pd1</Fingerprint>
+      <Integrity>ZafljxY2P5TDs/gQqm+x84cMNOGFyVacGsT7vHYL6fk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_26.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_28.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TiendaVirtual</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TiendaVirtual</BasePath>
+      <RelativePath>facturas/factura_28.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>1yiwgd0rvo</Fingerprint>
+      <Integrity>6UsrDTpR3hVrMZUXcTjTyAdqZtxKITwMOzIr+ufYFMU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_28.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_29.pdf'))">
+      <SourceType>Package</SourceType>
+      <SourceId>TiendaVirtual</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/TiendaVirtual</BasePath>
+      <RelativePath>facturas/factura_29.pdf</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5u66ewnlw6</Fingerprint>
+      <Integrity>HWZ9e0LpkzsAAIjsxufaLFTnFPvfPj0jsiUHDKs9QOA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_29.pdf'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\facturas\factura_3.pdf'))">
       <SourceType>Package</SourceType>
       <SourceId>TiendaVirtual</SourceId>
@@ -534,8 +588,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>61n19gt1b8</Fingerprint>
-      <Integrity>Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM=</Integrity>
+      <Fingerprint>dq7iv5lxdj</Fingerprint>
+      <Integrity>W8XHwe5+RK6Cbtt5ZKanrFlOiAPmzCxKU1YptbCCmBg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</OriginalItemSpec>
@@ -552,8 +606,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xonc9m1tvq</Fingerprint>
-      <Integrity>D+yyd1tlOErlAvT9JFq/gb+ngJsLFglAO70i+TeIH3k=</Integrity>
+      <Fingerprint>i22h7zhmf6</Fingerprint>
+      <Integrity>uodUPmAeaugRWsWR2YLlMRQMxwHjvAR3MvRoaDAPkSE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\about-us.svg'))</OriginalItemSpec>

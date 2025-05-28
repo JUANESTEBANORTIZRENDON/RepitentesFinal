@@ -1,43 +1,43 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Data;
 using TiendaVirtual.Models;
+using System.Threading.Tasks;
 
 namespace TiendaVirtual.Controllers
 {
     public class AdminProductoController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly DBProducto _dbProducto;
+        private readonly DBCategoria _dbCategoria;
 
         public AdminProductoController(ApplicationDbContext context)
         {
             _context = context;
+            _dbProducto = new DBProducto(_context);
+            _dbCategoria = new DBCategoria(_context);
         }
 
-        public IActionResult Index(string busqueda, string orden, bool? filtroActivo = null)
+        public async Task<IActionResult> Index(string busqueda, string orden, bool? filtroActivo = null)
         {
             // Obtener todos los productos, activos e inactivos
-            var productos = DBProducto.ObtenerProductos(false);
+            var productos = await _dbProducto.ObtenerProductosAsync(filtroActivo.GetValueOrDefault());
 
-            // ✅ Se crea instancia de DBCategoria para llamar método NO estático
-            var categorias = new DBCategoria(_context).ObtenerCategorias();
+            // Obtener categorías
+            var categorias = await _dbCategoria.ObtenerCategoriasAsync();
 
-            // ✅ Diccionario para mostrar nombre de la categoría desde su ID
+            // Diccionario para mostrar nombre de la categoría desde su ID
             ViewBag.Categorias = categorias.ToDictionary(c => c.IdCategoria, c => c.Nombre);
 
             // Filtro de búsqueda
             if (!string.IsNullOrEmpty(busqueda))
             {
                 productos = productos.Where(p =>
-                    p.Nombre.Contains(busqueda, StringComparison.OrdinalIgnoreCase) ||
-                    p.Marca.Contains(busqueda, StringComparison.OrdinalIgnoreCase) ||
-                    p.CodigoProducto.Contains(busqueda, StringComparison.OrdinalIgnoreCase)
+                    p.Nombre?.Contains(busqueda, StringComparison.OrdinalIgnoreCase) == true ||
+                    p.Marca?.Contains(busqueda, StringComparison.OrdinalIgnoreCase) == true ||
+                    p.CodigoProducto?.Contains(busqueda, StringComparison.OrdinalIgnoreCase) == true
                 ).ToList();
-            }
-
-            // Filtro por estado activo/inactivo
-            if (filtroActivo.HasValue)
-            {
-                productos = productos.Where(p => p.Activo == filtroActivo).ToList();
             }
 
             // Ordenamiento
@@ -51,68 +51,76 @@ namespace TiendaVirtual.Controllers
             };
 
             ViewBag.FiltroActivo = filtroActivo;
+            ViewBag.Busqueda = busqueda;
+            ViewBag.Orden = orden;
             return View(productos);
         }
 
-        public IActionResult Crear()
+        public async Task<IActionResult> Crear()
         {
-            ViewBag.Categorias = DBProducto.ObtenerCategorias();
+            ViewBag.Categorias = await _dbCategoria.ObtenerCategoriasAsync();
             return View();
         }
 
-      [HttpPost]
-public IActionResult Crear(Producto producto)
-{
-    ViewBag.Categorias = DBProducto.ObtenerCategorias();
-    if (ModelState.IsValid)
-    {
-        // Validar si el producto ya existe antes de insertar
-        if (DBProducto.ProductoExiste(producto.CodigoProducto, producto.Nombre))
+        [HttpPost]
+        public async Task<IActionResult> Crear(Producto producto)
         {
-            ModelState.AddModelError("", "Ya existe un producto con el mismo código, nombre o marca.");
+            ViewBag.Categorias = await _dbCategoria.ObtenerCategoriasAsync();
+            if (ModelState.IsValid)
+            {
+                // Validar si el producto ya existe antes de insertar
+                if (await _dbProducto.ProductoExisteAsync(producto.CodigoProducto ?? "", producto.Nombre ?? "", producto.Marca ?? ""))
+                {
+                    ModelState.AddModelError("", "Ya existe un producto con el mismo código, nombre o marca.");
+                    return View(producto);
+                }
+
+                try
+                {
+                    await _dbProducto.InsertarProductoAsync(producto);
+                    TempData["mensaje"] = "Producto añadido con éxito.";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", $"Ocurrió un error al añadir el producto: {ex.Message}");
+                }
+            }
             return View(producto);
         }
 
-        if (DBProducto.InsertarProducto(producto))
-        {
-            TempData["mensaje"] = "Producto añadido con éxito.";
-            return RedirectToAction("Index");
-        }
-        else
-        {
-            ModelState.AddModelError("", "Ocurrió un error al añadir el producto. Intenta nuevamente.");
-        }
-    }
-    return View(producto);
-}
 
-
-        public IActionResult Editar(int id)
+        public async Task<IActionResult> Editar(int id)
         {
-            var producto = DBProducto.ObtenerPorId(id);
+            var producto = await _dbProducto.ObtenerPorIdAsync(id);
             if (producto == null) return NotFound();
 
-            ViewBag.Categorias = DBProducto.ObtenerCategorias();
+            ViewBag.Categorias = await _dbCategoria.ObtenerCategoriasAsync();
             return View(producto);
         }
 
         [HttpPost]
-        public IActionResult Editar(Producto producto)
+        public async Task<IActionResult> Editar(Producto producto)
         {
-            ViewBag.Categorias = DBProducto.ObtenerCategorias();
+            ViewBag.Categorias = await _dbCategoria.ObtenerCategoriasAsync();
             if (ModelState.IsValid)
             {
-                if (DBProducto.ActualizarProducto(producto))
+                try
                 {
+                    await _dbProducto.ActualizarProductoAsync(producto);
                     TempData["mensaje"] = "Producto actualizado correctamente.";
                     return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", $"Error al actualizar el producto: {ex.Message}");
                 }
             }
             return View(producto);
         }
 
         [HttpPost]
-        public IActionResult EliminarSeleccionados(List<int> ids)
+        public async Task<IActionResult> EliminarSeleccionados(List<int> ids)
         {
             if (ids == null || ids.Count == 0)
             {
@@ -120,31 +128,40 @@ public IActionResult Crear(Producto producto)
                 return RedirectToAction("Index");
             }
 
-            foreach (var id in ids)
+            try
             {
-                DBProducto.EliminarProducto(id);
-            }
+                foreach (var id in ids)
+                {
+                    await _dbProducto.CambiarEstadoProductoAsync(id, false);
+                }
 
-            TempData["mensaje"] = "Productos desactivados correctamente.";
+                TempData["mensaje"] = "Productos desactivados correctamente.";
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = $"Error al desactivar productos: {ex.Message}";
+            }
+            
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult CambiarEstado(int id, bool estado)
+        public async Task<IActionResult> CambiarEstado(int id, bool estado)
         {
-            if (DBProducto.CambiarEstadoProducto(id, estado))
+            try
             {
+                await _dbProducto.CambiarEstadoProductoAsync(id, estado);
                 TempData["mensaje"] = $"Producto {(estado ? "activado" : "desactivado")} correctamente.";
             }
-            else
+            catch (Exception ex)
             {
-                TempData["error"] = $"Error al {(estado ? "activar" : "desactivar")} el producto.";
+                TempData["error"] = $"Error al {(estado ? "activar" : "desactivar")} el producto: {ex.Message}";
             }
             return RedirectToAction("Index");
         }
 
         [HttpPost]
-        public IActionResult ActivarSeleccionados(List<int> ids)
+        public async Task<IActionResult> ActivarSeleccionados(List<int> ids)
         {
             if (ids == null || ids.Count == 0)
             {
@@ -152,12 +169,20 @@ public IActionResult Crear(Producto producto)
                 return RedirectToAction("Index");
             }
 
-            foreach (var id in ids)
+            try
             {
-                DBProducto.CambiarEstadoProducto(id, true);
-            }
+                foreach (var id in ids)
+                {
+                    await _dbProducto.CambiarEstadoProductoAsync(id, true);
+                }
 
-            TempData["mensaje"] = "Productos activados correctamente.";
+                TempData["mensaje"] = "Productos activados correctamente.";
+            }
+            catch (Exception ex)
+            {
+                TempData["error"] = $"Error al activar productos: {ex.Message}";
+            }
+            
             return RedirectToAction("Index");
         }
     }

@@ -1,9 +1,27 @@
-﻿@model List<TiendaVirtual.Models.Producto>
+@model List<TiendaVirtual.Models.Producto>
 
 @{
     ViewData["Title"] = "Catálogo Premium";
     var categorias = ViewBag.Categorias as Dictionary<int, string>;
 }
+
+<!-- Mensajes de alerta -->
+<div class="container mt-3">
+    @if (TempData["mensaje"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <i class="fas fa-check-circle me-2"></i> @TempData["mensaje"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-circle me-2"></i> @TempData["error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+</div>
 
 <!-- Hero del Catálogo -->
 <section class="catalog-hero">
@@ -56,12 +74,25 @@
                 <p class="product-meta"><strong>Disponibles:</strong> @item.Stock</p>
                 <p class="product-price">$@item.PrecioUnitario</p>
 
-                <button class="add-to-cart-btn"
-                        data-bs-toggle="modal"
-                        data-bs-target="#productoModal"
-                        data-id="@item.IdProducto">
-                    <i class="fas fa-shopping-bag"></i> Añadir
-                </button>
+                @if (item.Stock > 0)
+                {
+                    <button class="add-to-cart-btn"
+                            data-bs-toggle="modal"
+                            data-bs-target="#productoModal"
+                            data-id="@item.IdProducto"
+                            data-nombre="@item.Nombre"
+                            data-precio="@item.PrecioUnitario"
+                            data-stock="@item.Stock"
+                            data-imagen="@item.Imagen">
+                        <i class="fas fa-shopping-bag"></i> Añadir
+                    </button>
+                }
+                else
+                {
+                    <button class="add-to-cart-btn out-of-stock" disabled>
+                        <i class="fas fa-times-circle"></i> Agotado
+                    </button>
+                }
             </div>
         </div>
     }
@@ -99,7 +130,7 @@
                                     <label>Cantidad:</label>
                                     <div class="quantity-input">
                                         <button type="button" class="quantity-btn minus">-</button>
-                                        <input type="number" name="Cantidad" id="modalCantidad" value="1" min="1" max="10">
+                                        <input type="number" name="Cantidad" id="modalCantidad" value="1" min="1">
                                         <button type="button" class="quantity-btn plus">+</button>
                                     </div>
                                 </div>
@@ -127,9 +158,9 @@
             document.getElementById('modalProductoImagen').src = button.getAttribute('data-imagen');
             document.getElementById('modalIdProducto').value = button.getAttribute('data-id');
 
-            // Actualizar máximo según stock
+            // Actualizar máximo según stock disponible
             const stock = parseInt(button.getAttribute('data-stock'));
-            document.getElementById('modalCantidad').max = stock > 10 ? 10 : stock;
+            document.getElementById('modalCantidad').max = stock;
         });
 
         // Contador de cantidad

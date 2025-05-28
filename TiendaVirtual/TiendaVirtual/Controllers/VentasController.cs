@@ -1,60 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Models;
-using System.Linq;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using TiendaVirtual.Data;
+using System.Collections.Generic;
 
 namespace TiendaVirtual.Controllers
 {
     [Authorize(Roles = "Administrador")]
     public class VentasController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly DBVentas _dbVentas;
 
-        public VentasController(ApplicationDbContext context)
+        public VentasController(DBVentas dbVentas)
         {
-            _context = context;
+            _dbVentas = dbVentas;
         }
 
         // GET: Ventas
         public async Task<IActionResult> Index(string busqueda, DateTime? fechaDesde, DateTime? fechaHasta)
         {
-            // Consulta base para obtener facturas con datos de usuario
-            var query = _context.Facturas
-                .Include(f => f.IdUsuarioNavigation)
-                .AsQueryable();
-
-            // Aplicar filtros si se proporcionaron
-            if (!string.IsNullOrWhiteSpace(busqueda))
-            {
-                // Buscar por nombre de usuario o ID de factura
-                query = query.Where(f => 
-                    f.IdUsuarioNavigation.Nombre.Contains(busqueda) ||
-                    f.IdUsuarioNavigation.Correo.Contains(busqueda) ||
-                    f.IdFactura.ToString() == busqueda);
-            }
-
-            // Filtrar por fecha inicial si se proporcionó
-            if (fechaDesde.HasValue)
-            {
-                // Ajustar para incluir todo el día de inicio
-                var fechaDesdeAjustada = fechaDesde.Value.Date;
-                query = query.Where(f => f.Fecha >= fechaDesdeAjustada);
-            }
-
-            // Filtrar por fecha final si se proporcionó
-            if (fechaHasta.HasValue)
-            {
-                // Ajustar para incluir todo el día final
-                var fechaHastaAjustada = fechaHasta.Value.Date.AddDays(1).AddSeconds(-1);
-                query = query.Where(f => f.Fecha <= fechaHastaAjustada);
-            }
-
-            // Ordenar por fecha descendente y ejecutar la consulta
-            var facturas = await query
-                .OrderByDescending(f => f.Fecha)
-                .ToListAsync();
+            // Utilizar la clase auxiliar para obtener las facturas con filtros
+            var facturas = await _dbVentas.ObtenerFacturasAsync(busqueda, fechaDesde, fechaHasta);
 
             // Guardar los parámetros de búsqueda para mantenerlos en la vista
             ViewBag.Busqueda = busqueda;
@@ -73,11 +41,7 @@ namespace TiendaVirtual.Controllers
             }
 
             // Obtener la factura con todos sus detalles y datos relacionados
-            var factura = await _context.Facturas
-                .Include(f => f.IdUsuarioNavigation)
-                .Include(f => f.FacturaDetalles)
-                    .ThenInclude(d => d.IdProductoNavigation)
-                .FirstOrDefaultAsync(f => f.IdFactura == id);
+            var factura = await _dbVentas.ObtenerFacturaPorIdAsync(id.Value);
 
             if (factura == null)
             {
@@ -96,19 +60,14 @@ namespace TiendaVirtual.Controllers
             }
 
             // Obtener el usuario
-            var usuario = await _context.Usuarios.FindAsync(id);
+            var usuario = await _dbVentas.ObtenerUsuarioPorIdAsync(id.Value);
             if (usuario == null)
             {
                 return NotFound();
             }
 
             // Obtener todas las facturas del usuario
-            var facturas = await _context.Facturas
-                .Where(f => f.IdUsuario == id)
-                .Include(f => f.FacturaDetalles)
-                    .ThenInclude(d => d.IdProductoNavigation)
-                .OrderByDescending(f => f.Fecha)
-                .ToListAsync();
+            var facturas = await _dbVentas.ObtenerHistorialUsuarioAsync(id.Value);
 
             ViewBag.Usuario = usuario;
             return View(facturas);
@@ -122,20 +81,54 @@ namespace TiendaVirtual.Controllers
                 return NotFound();
             }
 
-            var factura = await _context.Facturas.FindAsync(id);
+            var factura = await _dbVentas.ObtenerFacturaParaDescargarAsync(id.Value);
             if (factura == null || string.IsNullOrEmpty(factura.RutaPdf))
             {
                 return NotFound("Factura no encontrada o sin PDF.");
             }
 
-            var path = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", factura.RutaPdf);
-            if (!System.IO.File.Exists(path))
+            try
+            {
+                var pdfBytes = await _dbVentas.ObtenerBytesFacturaPdfAsync(factura.RutaPdf);
+                return File(pdfBytes, "application/pdf", $"factura_{factura.IdFactura}.pdf");
+            }
+            catch (System.IO.FileNotFoundException)
             {
                 return NotFound("Archivo PDF no encontrado.");
             }
-
-            var pdfBytes = await System.IO.File.ReadAllBytesAsync(path);
-            return File(pdfBytes, "application/pdf", $"factura_{factura.IdFactura}.pdf");
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al descargar factura: {ex.Message}");
+            }
+        }
+        
+        // GET: Ventas/VentasMensuales
+        public async Task<IActionResult> VentasMensuales(DateTime? fechaDesde, DateTime? fechaHasta)
+        {
+            // Si no se especifica un rango de fechas, usamos el año actual
+            if (!fechaDesde.HasValue)
+            {
+                fechaDesde = new DateTime(DateTime.Now.Year, 1, 1);
+            }
+            
+            if (!fechaHasta.HasValue)
+            {
+                fechaHasta = DateTime.Now;
+            }
+            
+            // Obtener las ventas mensuales
+            var ventasMensuales = await _dbVentas.ObtenerVentasPorMesAsync(fechaDesde, fechaHasta);
+            
+            // Calcular totales generales
+            decimal totalGeneral = ventasMensuales.Sum(v => v.TotalVentas);
+            int cantidadGeneral = ventasMensuales.Sum(v => v.CantidadVentas);
+            
+            ViewBag.TotalGeneral = totalGeneral;
+            ViewBag.CantidadGeneral = cantidadGeneral;
+            ViewBag.FechaDesde = fechaDesde?.ToString("yyyy-MM-dd");
+            ViewBag.FechaHasta = fechaHasta?.ToString("yyyy-MM-dd");
+            
+            return View(ventasMensuales);
         }
     }
 }

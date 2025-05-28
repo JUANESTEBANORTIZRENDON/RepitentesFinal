@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj": {}
+    "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj": {}
   },
   "projects": {
-    "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj": {
+    "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
+        "projectUniqueName": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
         "projectName": "TiendaVirtual",
-        "projectPath": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
-        "packagesPath": "C:\\Users\\danit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\danit\\OneDrive\\Escritorio\\TRABAJOS U\\QUINTO SEMESTRE\\POO I\\TRABAJO\\TiendaVirtual\\TiendaVirtual\\obj\\",
+        "projectPath": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\TiendaVirtual.csproj",
+        "packagesPath": "C:\\Users\\juane\\.nuget\\packages\\",
+        "outputPath": "D:\\AlmacenGit\\PooFinal\\TiendaVirtual\\TiendaVirtual\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\Program Files\\Microsoft\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\danit\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\juane\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

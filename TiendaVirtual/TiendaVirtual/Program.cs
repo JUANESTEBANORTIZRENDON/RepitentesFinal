@@ -16,15 +16,17 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
-// Configuración de ServidorSettings para obtener la IP y Puerto desde appsettings.json
+// ConfiguraciÃ³n de ServidorSettings para obtener la IP y Puerto desde appsettings.json
 builder.Services.Configure<ServidorSettings>(
     builder.Configuration.GetSection("ServidorSettings"));
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(connectionString));
 
-//
+// Servicios de acceso a datos
 builder.Services.AddScoped<DBUsuario>();
+builder.Services.AddScoped<DBVentas>();
+builder.Services.AddScoped<DBProducto>();
 
 //cookies
 

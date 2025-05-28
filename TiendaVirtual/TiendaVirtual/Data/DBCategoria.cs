@@ -1,4 +1,4 @@
-﻿using TiendaVirtual.Models;
+using TiendaVirtual.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace TiendaVirtual.Data;
@@ -42,9 +42,11 @@ public class DBCategoria
     {
         return _context.Categoria.ToList();
     }
-
-
-
+    
+    public async Task<List<Categorium>> ObtenerCategoriasAsync()
+    {
+        return await _context.Categoria.ToListAsync();
+    }
 }
 
 

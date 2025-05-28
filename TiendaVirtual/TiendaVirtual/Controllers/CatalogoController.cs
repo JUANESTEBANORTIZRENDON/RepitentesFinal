@@ -1,58 +1,29 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using TiendaVirtual.Data;
 using TiendaVirtual.Models;
+using System.Threading.Tasks;
 
 namespace TiendaVirtual.Controllers
 {
     public class CatalogoController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly DBProducto _dbProducto;
 
-        public CatalogoController(ApplicationDbContext context)
+        public CatalogoController(DBProducto dbProducto)
         {
-            _context = context;
+            _dbProducto = dbProducto;
         }
 
-        public IActionResult Index(string busqueda, string orden, int pagina = 1, int tamanoPagina = 8)
+        public async Task<IActionResult> Index(string busqueda, string orden, int pagina = 1, int tamanoPagina = 8)
         {
-            var query = _context.Productos
-                .Include(p => p.IdCategoriaNavigation)
-                .Where(p => p.Activo == true || p.Activo == null)
-                .AsQueryable();
+            // Usar el método de DBProducto para obtener productos filtrados
+            var resultado = await _dbProducto.ObtenerProductosCatalogoAsync(busqueda, orden, pagina, tamanoPagina);
+            var productos = resultado.productos;
+            int totalProductos = resultado.total;
 
-            if (!string.IsNullOrWhiteSpace(busqueda))
-            {
-                query = query.Where(p =>
-                    p.Nombre.Contains(busqueda) ||
-                    p.Marca.Contains(busqueda) ||
-                    p.CodigoProducto.Contains(busqueda));
-            }
-
-            switch (orden)
-            {
-                case "precio_asc":
-                    query = query.OrderBy(p => p.PrecioUnitario);
-                    break;
-                case "precio_desc":
-                    query = query.OrderByDescending(p => p.PrecioUnitario);
-                    break;
-                case "stock_asc":
-                    query = query.OrderBy(p => p.Stock);
-                    break;
-                case "stock_desc":
-                    query = query.OrderByDescending(p => p.Stock);
-                    break;
-            }
-
-            int totalProductos = query.Count();
-            var productos = query
-                .Skip((pagina - 1) * tamanoPagina)
-                .Take(tamanoPagina)
-                .ToList();
-
-            // ✅ Cargar las categorías y pasarlas a la vista como diccionario
-            var categorias = _context.Categoria.ToDictionary(c => c.IdCategoria, c => c.Nombre);
-            ViewBag.Categorias = categorias;
+            // Cargar las categorías
+            var categorias = await _dbProducto.ObtenerCategoriasAsync();
+            ViewBag.Categorias = categorias.ToDictionary(c => c.IdCategoria, c => c.Nombre);
 
             ViewBag.TotalPaginas = (int)Math.Ceiling((double)totalProductos / tamanoPagina);
             ViewBag.PaginaActual = pagina;
@@ -60,6 +31,21 @@ namespace TiendaVirtual.Controllers
             ViewBag.Orden = orden;
 
             return View(productos);
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> VerificarStock(int idProducto, int cantidad)
+        {
+            // Verificar si hay suficiente stock
+            bool hayStock = await _dbProducto.VerificarStockDisponibleAsync(idProducto, cantidad);
+            if (!hayStock)
+            {
+                // Si no hay suficiente stock, retornar información sobre el stock disponible
+                var producto = await _dbProducto.ObtenerPorIdAsync(idProducto);
+                return Json(new { exito = false, mensaje = $"Stock insuficiente. Solo hay {producto.Stock} unidades disponibles.", stockActual = producto.Stock });
+            }
+            
+            return Json(new { exito = true });
         }
 
     }

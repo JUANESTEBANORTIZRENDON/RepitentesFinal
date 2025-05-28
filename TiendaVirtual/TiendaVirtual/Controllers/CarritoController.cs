@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TiendaVirtual.Models;
 using PdfSharpCore.Pdf;
@@ -57,6 +57,22 @@ namespace TiendaVirtual.Controllers
                 TempData["error"] = "Error al identificar usuario autenticado.";
                 return RedirectToAction("Login", "Cuenta");
             }
+            
+            // Obtener producto y verificar stock
+            var producto = await _context.Productos.FindAsync(idProducto);
+            
+            if (producto == null)
+            {
+                TempData["error"] = "El producto no existe.";
+                return RedirectToAction("Index", "Catalogo");
+            }
+            
+            // Verificar stock
+            if (producto.Stock < cantidad)
+            {
+                TempData["error"] = $"Stock insuficiente. Solo hay {producto.Stock} unidades disponibles.";
+                return RedirectToAction("Index", "Catalogo");
+            }
 
             var carrito = await _context.Carritos
                 .Include(c => c.CarritoProductos)
@@ -70,10 +86,17 @@ namespace TiendaVirtual.Controllers
             }
 
             var existente = carrito.CarritoProductos.FirstOrDefault(cp => cp.IdProducto == idProducto);
-            var unitario = await _context.Productos.FindAsync(idProducto);
 
+            // Verificar si la cantidad total (existente + nueva) no supera el stock disponible
             if (existente != null)
             {
+                int cantidadTotal = existente.Cantidad + cantidad;
+                if (cantidadTotal > producto.Stock)
+                {
+                    TempData["error"] = $"Stock insuficiente. Solo hay {producto.Stock} unidades disponibles y ya tienes {existente.Cantidad} en tu carrito.";
+                    return RedirectToAction("Index", "Catalogo");
+                }
+                
                 existente.Cantidad += cantidad;
             }
             else
@@ -82,14 +105,24 @@ namespace TiendaVirtual.Controllers
                 {
                     IdProducto = idProducto,
                     Cantidad = cantidad,
-                    PrecioUnitario = unitario.PrecioUnitario
+                    PrecioUnitario = producto.PrecioUnitario
                 });
             }
 
             carrito.FechaActualizacion = DateTime.Now;
             await _context.SaveChangesAsync();
 
-            TempData["mensaje"] = "Producto agregado al carrito.";
+            // Personalizar mensaje según la cantidad
+            string nombreProducto = producto.Nombre ?? "Producto";
+            if (cantidad == 1)
+            {
+                TempData["mensaje"] = $"Se agregó 1 {nombreProducto} al carrito.";
+            }
+            else
+            {
+                TempData["mensaje"] = $"Se agregaron {cantidad} unidades de {nombreProducto} al carrito.";
+            }
+            
             return RedirectToAction("Index", "Catalogo");
         }
 
